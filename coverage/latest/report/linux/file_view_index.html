@@ -1,0 +1,1238 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <meta charset='UTF-8'>
+    <link rel='stylesheet' type='text/css' href='../style.css'>
+    <!-- Custom style overrides -->
+    <style>
+      /* Copyright 2018 The Chromium Authors. All rights reserved.
+ * Use of this source code is governed by a BSD-style license that can be
+ * found in the LICENSE file. */
+
+th, td {
+  padding: 5px 16px;
+}
+
+tbody td, tfoot td {
+  font-size: 14px;
+}
+
+thead th {
+  font-size: 16px;
+}
+
+thead th, tfoot td {
+  background-color: #f5f5f5;
+  border-left: 1px solid #e4e4e4;
+  border-right: 1px solid #e4e4e4;
+  color: #484848;
+  text-transform: uppercase;
+}
+
+tbody tr:hover td, tfoot tr:hover td {
+  background-color: #f5f5f5;
+  border-color: #e4e4e4 !important;
+}
+    </style>
+  </head>
+  <body>
+    <h2>Coverage Report</h2>
+    <p>
+      View results by:
+            <a href='directory_view_index.html'>Directories</a>
+              | <a href='file_view_index.html'>Files</a>
+          </p>
+    <div class='centered'><table>
+  <thead>
+    <tr>
+      <th class="column-entry-bold">Path</th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.LINE)" title=
+          "Line coverage is the percentage of code lines which have been executed at least once. Only executable lines within function bodies are considered to be code lines.">
+        Line Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.FUNCTION)" title=
+          "Function coverage is the percentage of functions which have been executed at least once. A function is considered to be executed if any of its instantiations are executed.">
+        Function Coverage
+      </th>
+      <th class="column-entry-bold" onclick="sortTable(SORT_COLUMN.REGION)" title=
+          "Region coverage is the percentage of code regions which have been executed at least once. A code region may span multiple lines (e.g in a large function body with no control flow). However, it's also possible for a single line to contain multiple code regions (e.g in 'return x || y &amp;&amp; z').">
+        Region Coverage
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/error.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/error.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/borrow.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/borrow.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/boxed.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/boxed.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/binary_heap.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/binary_heap.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/btree_map.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/btree_map.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/btree_set.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/btree_set.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/linked_list.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/linked_list.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/vec_deque.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/collections/vec_deque.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/ffi/c_str.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/ffi/c_str.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/rc.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/rc.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/string.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/string.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/sync.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/sync.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/38)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/vec.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/alloc/vec.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/array.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/array.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/41)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/67)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/bool.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/bool.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/cell.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/cell.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/42)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/char.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/char.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/cmp.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/cmp.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/iter.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/iter.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/marker.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/marker.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/num.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/num.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/46)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/71)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/ops.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/ops.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/56)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/84)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/option.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/option.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/25)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/result.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/result.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/slice.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/slice.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/str.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/str.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/24)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/47)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/sync/atomic.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/sync/atomic.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/18)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/27)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/time.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/time.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/17)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/tuple.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/tuple.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/33)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/unit.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/core/unit.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/collections/hash_map.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/collections/hash_map.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/collections/hash_set.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/collections/hash_set.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/ffi/os_str.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/ffi/os_str.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/net.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/net.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/104)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/path.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/path.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/sync.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/foreign/std/sync.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/lib.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/size_hint.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/size_hint.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/55)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/unstructured.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/arbitrary-1.4.2/src/unstructured.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/215)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/337)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/elsa-1.11.2/src/map.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/elsa-1.11.2/src/map.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/28)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/39)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/libfuzzer-sys-0.4.10/src/lib.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/libfuzzer-sys-0.4.10/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 62.96% (34/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (9/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 56.82% (50/88)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/display.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/display.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/122)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/12)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/204)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/error.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/error.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/54)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/4)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/88)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/eval.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/eval.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/130)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/172)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/identifier.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/identifier.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/162)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/19)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/280)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/impls.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/impls.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/90)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/142)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/lib.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/50)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/14)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/62)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/parse.rs.html'>rust/registry/src/index.crates.io-1949cf8c6b5b557f/semver-1.0.27/src/parse.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/268)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/480)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='rust/rustup/toolchains/nightly-2025-09-05-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/thread_local/native/mod.rs.html'>rust/rustup/toolchains/nightly-2025-09-05-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/thread_local/native/mod.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 62.50% (5/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 58.33% (7/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/binary_operator.rs.html'>src/rustcc/crates/rustcc_ast/src/binary_operator.rs</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (14/14)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (14/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/expression.rs.html'>src/rustcc/crates/rustcc_ast/src/expression.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/29)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/48)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/function_definition.rs.html'>src/rustcc/crates/rustcc_ast/src/function_definition.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/6)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/10)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/lib.rs.html'>src/rustcc/crates/rustcc_ast/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  0.00% (0/8)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/statement.rs.html'>src/rustcc/crates/rustcc_ast/src/statement.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (6/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 36.36% (8/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_ast/src/translation_unit.rs.html'>src/rustcc/crates/rustcc_ast/src/translation_unit.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 38.46% (5/13)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (1/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 18.75% (3/16)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_codegen/src/lib.rs.html'>src/rustcc/crates/rustcc_codegen/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 97.12% (304/313)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 94.44% (34/36)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 97.21% (697/717)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_diagnostic/src/color.rs.html'>src/rustcc/crates/rustcc_diagnostic/src/color.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (3/15)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (1/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 20.00% (3/15)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_diagnostic/src/diagnostic.rs.html'>src/rustcc/crates/rustcc_diagnostic/src/diagnostic.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 59.57% (28/47)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 57.69% (30/52)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_diagnostic/src/diagnostic_builder.rs.html'>src/rustcc/crates/rustcc_diagnostic/src/diagnostic_builder.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 37.50% (6/16)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 66.67% (2/3)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (7/14)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_diagnostic/src/diagnostic_consumer.rs.html'>src/rustcc/crates/rustcc_diagnostic/src/diagnostic_consumer.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre>  3.23% (1/31)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 50.00% (1/2)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre>  6.06% (2/33)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_diagnostic/src/diagnostic_engine.rs.html'>src/rustcc/crates/rustcc_diagnostic/src/diagnostic_engine.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 70.00% (28/40)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 40.00% (2/5)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 63.89% (23/36)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_lexer/src/lib.rs.html'>src/rustcc/crates/rustcc_lexer/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.31% (470/488)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (9/9)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.91% (470/485)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_lexer/src/token.rs.html'>src/rustcc/crates/rustcc_lexer/src/token.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 89.26% (291/326)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.61% (38/46)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 59.69% (274/459)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/analysis.rs.html'>src/rustcc/crates/rustcc_llvm/src/analysis.rs</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (5/5)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/basic_block.rs.html'>src/rustcc/crates/rustcc_llvm/src/basic_block.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 87.50% (14/16)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 86.36% (19/22)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/builder.rs.html'>src/rustcc/crates/rustcc_llvm/src/builder.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 76.92% (140/182)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 77.78% (28/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 76.06% (286/376)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/context.rs.html'>src/rustcc/crates/rustcc_llvm/src/context.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 63.64% (28/44)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 54.55% (6/11)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 61.43% (43/70)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/function.rs.html'>src/rustcc/crates/rustcc_llvm/src/function.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 76.00% (19/25)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (6/8)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 82.35% (28/34)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/lib.rs.html'>src/rustcc/crates/rustcc_llvm/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (7/7)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/module.rs.html'>src/rustcc/crates/rustcc_llvm/src/module.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 81.82% (18/22)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (3/4)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 85.71% (30/35)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/phi.rs.html'>src/rustcc/crates/rustcc_llvm/src/phi.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 94.74% (18/19)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (4/4)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 93.75% (30/32)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/typ.rs.html'>src/rustcc/crates/rustcc_llvm/src/typ.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 92.86% (13/14)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (3/3)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 90.48% (19/21)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_llvm/src/value.rs.html'>src/rustcc/crates/rustcc_llvm/src/value.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 90.00% (9/10)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (2/2)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 83.33% (10/12)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_parser/src/lib.rs.html'>src/rustcc/crates/rustcc_parser/src/lib.rs</a></pre>
+              </td>
+            <td class='column-entry-yellow'>
+        <pre> 98.22% (221/225)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (17/17)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 96.85% (277/286)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_source/src/source_file.rs.html'>src/rustcc/crates/rustcc_source/src/source_file.rs</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (14/14)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 75.00% (21/28)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_source/src/source_location.rs.html'>src/rustcc/crates/rustcc_source/src/source_location.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 42.68% (35/82)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (3/9)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 45.95% (34/74)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_source/src/source_manager.rs.html'>src/rustcc/crates/rustcc_source/src/source_manager.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 33.33% (12/36)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 37.50% (3/8)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 32.73% (18/55)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/crates/rustcc_source/src/source_range.rs.html'>src/rustcc/crates/rustcc_source/src/source_range.rs</a></pre>
+              </td>
+            <td class='column-entry-red'>
+        <pre> 75.47% (40/53)</pre>
+      </td>
+            <td class='column-entry-yellow'>
+        <pre> 85.71% (6/7)</pre>
+      </td>
+            <td class='column-entry-red'>
+        <pre> 78.33% (47/60)</pre>
+      </td>
+          </tr>
+        <tr class="light-row">
+      <td>
+                  <pre><a href='src/rustcc/fuzz/fuzz_targets/fuzz_compile.rs.html'>src/rustcc/fuzz/fuzz_targets/fuzz_compile.rs</a></pre>
+              </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (5/5)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (1/1)</pre>
+      </td>
+            <td class='column-entry-green'>
+        <pre>100.00% (9/9)</pre>
+      </td>
+          </tr>
+      </tbody>
+      <tfoot>
+      <tr class="light-row-bold">
+        <td>
+          <pre>Totals</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 45.39% (1787/3937)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 35.00% (196/560)</pre>
+        </td>
+                <td class='column-entry-red'>
+          <pre> 41.31% (2471/5982)</pre>
+        </td>
+              </tr>
+    </tfoot>
+  </table>
+
+<script>
+  const SORT_COLUMN = {
+    LINE: 2,
+    FUNCTION: 3,
+    REGION: 4,
+  }
+
+  const SORT_TYPES = {
+    UNSET: -1,
+    PERCENT: 0,
+    AGGREGATE: 1,
+  }
+
+  var SORT_ORDER = {
+    [SORT_COLUMN.LINE]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.FUNCTION]: [SORT_TYPES.UNSET],
+    [SORT_COLUMN.REGION]: [SORT_TYPES.UNSET],
+  }
+
+  function sortTable(columnNumber) {
+    SORT_ORDER[columnNumber] = ++SORT_ORDER[columnNumber] % 2;
+
+    let columnSortOrder = SORT_ORDER[columnNumber];
+    let tbody = document.getElementsByTagName("tbody")[0];
+
+    [].slice.call(tbody.rows).sort(function(a, b) {
+      let aColumn = a.cells[columnNumber-1].textContent;
+      let bColumn = b.cells[columnNumber-1].textContent;
+
+      let aColumnCompare, bColumnCompare;
+      if (columnSortOrder == SORT_TYPES.PERCENT) {
+        aColumnCompare = parseFloat(/([0-9.]+)%/.exec(aColumn)[1]);
+        bColumnCompare = parseFloat(/([0-9.]+)%/.exec(bColumn)[1]);
+      } else {
+        aColumnCompare = parseInt(/\/(\d+)/.exec(aColumn)[1]);
+        bColumnCompare = parseInt(/\/(\d+)/.exec(bColumn)[1]);
+      }
+
+      return (
+          aColumnCompare < bColumnCompare ? -1:
+              aColumnCompare > bColumnCompare ? 1 : 0);
+    }).forEach(function(value, index) {
+      tbody.appendChild(value);
+    });
+  }
+
+</script>    </div>
+  </body>
+</html>
