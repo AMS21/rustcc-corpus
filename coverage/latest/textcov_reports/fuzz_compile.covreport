@@ -286,7 +286,7 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen23codegen_unary_operation:
   249|  4.25k|        let value = self.codegen_expression(expression);
   250|       |
   251|  4.25k|        match operator {
-  252|    294|            Positive => value,
+  252|    295|            Positive => value,
   253|    261|            Negate => self.negate(value),
   254|    317|            Complement => self.complement(value),
   255|  3.38k|            LogicalNot => self.logical_not(value),
@@ -1100,7 +1100,7 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   479|       |                }
   480|       |            }
   481|       |
-  482|  1.77k|            LexerState::AfterMinus => match self.peek_next() {
+  482|  1.76k|            LexerState::AfterMinus => match self.peek_next() {
   483|    229|                Some('-') => {
   484|    229|                    let location =
   485|    229|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1167,12 +1167,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   546|    647|                    self.state = LexerState::Start;
   547|    647|                }
   548|       |
-  549|  1.31k|                _ => {
-  550|  1.31k|                    self.queued_tokens
-  551|  1.31k|                        .push_back(Token::new_less_than(self.token_begin_location));
-  552|  1.31k|
-  553|  1.31k|                    self.state = LexerState::Start;
-  554|  1.31k|                }
+  549|  1.30k|                _ => {
+  550|  1.30k|                    self.queued_tokens
+  551|  1.30k|                        .push_back(Token::new_less_than(self.token_begin_location));
+  552|  1.30k|
+  553|  1.30k|                    self.state = LexerState::Start;
+  554|  1.30k|                }
   555|       |            },
   556|       |
   557|  2.45k|            LexerState::AfterGreaterThan => match self.peek_next() {
@@ -1197,12 +1197,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   576|    522|                    self.state = LexerState::Start;
   577|    522|                }
   578|       |
-  579|  1.49k|                _ => {
-  580|  1.49k|                    self.queued_tokens
-  581|  1.49k|                        .push_back(Token::new_greater_than(self.token_begin_location));
-  582|  1.49k|
-  583|  1.49k|                    self.state = LexerState::Start;
-  584|  1.49k|                }
+  579|  1.48k|                _ => {
+  580|  1.48k|                    self.queued_tokens
+  581|  1.48k|                        .push_back(Token::new_greater_than(self.token_begin_location));
+  582|  1.48k|
+  583|  1.48k|                    self.state = LexerState::Start;
+  584|  1.48k|                }
   585|       |            },
   586|       |
   587|  1.44k|            LexerState::AfterAmpersand => match self.peek_next() {
@@ -1376,7 +1376,7 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind14unary_operator:
   135|  7.63k|    pub const fn unary_operator(&self) -> Option<UnaryOperator> {
   136|       |        #[expect(clippy::wildcard_enum_match_arm)]
   137|  7.63k|        match self {
-  138|    382|            Self::Plus => Some(UnaryOperator::Positive),
+  138|    383|            Self::Plus => Some(UnaryOperator::Positive),
   139|    328|            Self::Minus => Some(UnaryOperator::Negate),
   140|    757|            Self::Tilde => Some(UnaryOperator::Complement),
   141|  6.17k|            Self::Bang => Some(UnaryOperator::LogicalNot),
@@ -1389,10 +1389,10 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15binary_operator:
   108|       |        #[expect(clippy::wildcard_enum_match_arm)]
   109|  17.8k|        match self {
   110|    722|            Self::Plus => Some(BinaryOperator::Add),
-  111|    713|            Self::Minus => Some(BinaryOperator::Subtract),
+  111|    712|            Self::Minus => Some(BinaryOperator::Subtract),
   112|    706|            Self::Star => Some(BinaryOperator::Multiply),
   113|    607|            Self::Slash => Some(BinaryOperator::Divide),
-  114|    795|            Self::Percent => Some(BinaryOperator::Remainder),
+  114|    796|            Self::Percent => Some(BinaryOperator::Remainder),
   115|    629|            Self::Ampersand => Some(BinaryOperator::BitwiseAnd),
   116|    578|            Self::AmpersandAmpersand => Some(BinaryOperator::LogicalAnd),
   117|    646|            Self::Caret => Some(BinaryOperator::BitwiseXor),
@@ -1470,16 +1470,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_ampersandNtNtCsgxSe
   346|    841|        }
   347|    841|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_less_thanNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  445|  1.31k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  446|  1.31k|        let range = range.into();
+  445|  1.30k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  446|  1.30k|        let range = range.into();
   447|       |
-  448|  1.31k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
+  448|  1.30k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
   449|       |
-  450|  1.31k|        Self {
-  451|  1.31k|            kind: TokenKind::LessThan,
-  452|  1.31k|            range,
-  453|  1.31k|        }
-  454|  1.31k|    }
+  450|  1.30k|        Self {
+  451|  1.30k|            kind: TokenKind::LessThan,
+  452|  1.30k|            range,
+  453|  1.30k|        }
+  454|  1.30k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_pipe_pipeNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   386|    561|    pub fn new_pipe_pipe<R: Into<SourceRange<'a>>>(range: R) -> Self {
   387|    561|        let range = range.into();
@@ -1570,16 +1570,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token15new_right_braceNtNtCsgx
   226|    641|        }
   227|    641|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token16new_greater_thanNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  478|  1.49k|    pub fn new_greater_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  479|  1.49k|        let range = range.into();
+  478|  1.48k|    pub fn new_greater_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  479|  1.48k|        let range = range.into();
   480|       |
-  481|  1.49k|        debug_assert_eq!(range.source_text().unwrap_or(""), ">", "Expected '>'");
+  481|  1.48k|        debug_assert_eq!(range.source_text().unwrap_or(""), ">", "Expected '>'");
   482|       |
-  483|  1.49k|        Self {
-  484|  1.49k|            kind: TokenKind::GreaterThan,
-  485|  1.49k|            range,
-  486|  1.49k|        }
-  487|  1.49k|    }
+  483|  1.48k|        Self {
+  484|  1.48k|            kind: TokenKind::GreaterThan,
+  485|  1.48k|            range,
+  486|  1.48k|        }
+  487|  1.48k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token17new_equals_equalsNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   410|    732|    pub fn new_equals_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
   411|    732|        let range = range.into();
@@ -1834,10 +1834,10 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder11zero_extend:
   283|       |        })
   284|  4.76k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder13integer_equal:
-  208|  3.58k|    pub fn integer_equal(&self, lhs: LLVMValue, rhs: LLVMValue) -> LLVMValue {
-  209|  3.58k|        let name = to_cstring("icmp_eq");
-  210|  3.58k|        self.integer_compare(LLVMIntPredicate::LLVMIntEQ, lhs, rhs, &name)
-  211|  3.58k|    }
+  208|  3.57k|    pub fn integer_equal(&self, lhs: LLVMValue, rhs: LLVMValue) -> LLVMValue {
+  209|  3.57k|        let name = to_cstring("icmp_eq");
+  210|  3.57k|        self.integer_compare(LLVMIntPredicate::LLVMIntEQ, lhs, rhs, &name)
+  211|  3.57k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder13signed_divide:
    93|    195|    pub fn signed_divide(&self, left: LLVMValue, right: LLVMValue) -> LLVMValue {
    94|    195|        let name = to_cstring("sdiv");
@@ -2196,12 +2196,12 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12consume_next:
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12parse_factor:
   259|  68.5k|    fn parse_factor(&'_ self) -> Option<Expression<'_>> {
   260|  68.5k|        let Some(token) = self.peek_next() else {
-  261|    195|            self.diagnostic(
-  262|    195|                DiagnosticId::ExpectedExpression,
-  263|    195|                self.current_token_source_range(),
+  261|    196|            self.diagnostic(
+  262|    196|                DiagnosticId::ExpectedExpression,
+  263|    196|                self.current_token_source_range(),
   264|       |                "expected expression but reached end of file",
   265|       |            );
-  266|    195|            return None;
+  266|    196|            return None;
   267|       |        };
   268|       |
   269|       |        #[expect(clippy::wildcard_enum_match_arm)]
@@ -2211,12 +2211,12 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12parse_factor:
   273|  50.8k|            TokenKind::LeftParenthesis => self.parse_parenthesis_expression(),
   274|       |
   275|       |            _ => {
-  276|    239|                self.diagnostic(
-  277|    239|                    DiagnosticId::ExpectedExpression,
-  278|    239|                    token.range,
+  276|    238|                self.diagnostic(
+  277|    238|                    DiagnosticId::ExpectedExpression,
+  278|    238|                    token.range,
   279|       |                    "expected expression",
   280|       |                );
-  281|    239|                None
+  281|    238|                None
   282|       |            }
   283|       |        }
   284|  68.5k|    }
@@ -2480,11 +2480,11 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser6expect:
    71|   182k|        if let Some(token) = self.peek_next()
    72|   178k|            && token.kind == *token_kind
    73|       |        {
-   74|  57.8k|            self.consume();
-   75|  57.8k|            return Some(token);
-   76|   125k|        }
+   74|  57.7k|            self.consume();
+   75|  57.7k|            return Some(token);
+   76|   124k|        }
    77|       |
-   78|   125k|        None
+   78|   124k|        None
    79|   182k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser7consume:
    60|   103k|    fn consume(&self) {
