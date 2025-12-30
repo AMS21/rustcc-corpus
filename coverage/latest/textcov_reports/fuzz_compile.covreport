@@ -95,7 +95,7 @@ _RNCNkNvCs8IHyuhOPnlA_12fuzz_compile7CODEGEN00B5_:
    95|  1.31k|                    }
 
 _RNvMNtCsgRQV1LU64Ti_10rustcc_ast15binary_operatorNtB2_14BinaryOperator10precedence:
-   26|  21.2k|    pub const fn precedence(&self) -> u8 {
+   26|  21.4k|    pub const fn precedence(&self) -> u8 {
    27|       |        use BinaryOperator::{
    28|       |            Add, Assignment, BitwiseAnd, BitwiseLeftShift, BitwiseOr, BitwiseRightShift,
    29|       |            BitwiseXor, Divide, Equals, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual,
@@ -103,11 +103,11 @@ _RNvMNtCsgRQV1LU64Ti_10rustcc_ast15binary_operatorNtB2_14BinaryOperator10precede
    31|       |        };
    32|       |
    33|       |        // Reference: https://en.cppreference.com/w/c/language/operator_precedence.html
-   34|  21.2k|        match self {
-   35|  3.37k|            Multiply | Divide | Remainder => 110,
-   36|  2.38k|            Add | Subtract => 100,
-   37|  2.12k|            BitwiseLeftShift | BitwiseRightShift => 90,
-   38|  4.74k|            LessThan | LessThanOrEqual | GreaterThan | GreaterThanOrEqual => 80,
+   34|  21.4k|        match self {
+   35|  3.61k|            Multiply | Divide | Remainder => 110,
+   36|  2.40k|            Add | Subtract => 100,
+   37|  1.87k|            BitwiseLeftShift | BitwiseRightShift => 90,
+   38|  4.98k|            LessThan | LessThanOrEqual | GreaterThan | GreaterThanOrEqual => 80,
    39|  2.07k|            Equals | NotEquals => 70,
    40|    987|            BitwiseAnd => 60,
    41|    969|            BitwiseXor => 50,
@@ -116,16 +116,16 @@ _RNvMNtCsgRQV1LU64Ti_10rustcc_ast15binary_operatorNtB2_14BinaryOperator10precede
    44|    899|            LogicalOr => 20,
    45|  1.32k|            Assignment => 10,
    46|       |        }
-   47|  21.2k|    }
+   47|  21.4k|    }
 
 _RNvMNtCsgRQV1LU64Ti_10rustcc_ast9statementNtB2_9Statement10new_return:
-   23|  1.57k|    pub const fn new_return(expression: Expression<'a>, range: SourceRange<'a>) -> Self {
-   24|  1.57k|        Self::new(StatementKind::Return(expression), range)
-   25|  1.57k|    }
+   23|  1.70k|    pub const fn new_return(expression: Expression<'a>, range: SourceRange<'a>) -> Self {
+   24|  1.70k|        Self::new(StatementKind::Return(expression), range)
+   25|  1.70k|    }
 _RNvMNtCsgRQV1LU64Ti_10rustcc_ast9statementNtB2_9Statement3new:
-   18|  1.57k|    pub const fn new(kind: StatementKind<'a>, range: SourceRange<'a>) -> Self {
-   19|  1.57k|        Self { kind, range }
-   20|  1.57k|    }
+   18|  1.70k|    pub const fn new(kind: StatementKind<'a>, range: SourceRange<'a>) -> Self {
+   19|  1.70k|        Self { kind, range }
+   20|  1.70k|    }
 
 _RNvMNtCsgRQV1LU64Ti_10rustcc_ast16translation_unitNtB2_15TranslationUnit3new:
    12|  1.31k|    pub const fn new() -> Self {
@@ -139,9 +139,9 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen10complement:
   123|    317|        self.builder.bitwise_complement(value)
   124|    317|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen10int32_type:
-   82|  17.5k|    fn int32_type(&self) -> LLVMType {
-   83|  17.5k|        self.context.int32_type()
-   84|  17.5k|    }
+   82|  17.6k|    fn int32_type(&self) -> LLVMType {
+   83|  17.6k|        self.context.int32_type()
+   84|  17.6k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen11logical_not:
   127|  3.44k|    fn logical_not(&self, value: LLVMValue) -> LLVMValue {
   128|       |        // 1. Check if the value == 0
@@ -161,19 +161,19 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen12reset_module:
    74|  1.31k|        Ok(())
    75|  1.31k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen16codegen_function:
-  143|  1.57k|    fn codegen_function(&self, function: &FunctionDefinition) -> bool {
+  143|  1.70k|    fn codegen_function(&self, function: &FunctionDefinition) -> bool {
   144|       |        // Create the function type
-  145|  1.57k|        let function_type = function_type(self.int32_type());
+  145|  1.70k|        let function_type = function_type(self.int32_type());
   146|       |
   147|       |        // Create the function
-  148|  1.57k|        let llvm_function = self.function(&function.name, function_type);
+  148|  1.70k|        let llvm_function = self.function(&function.name, function_type);
   149|       |
   150|       |        // Create a basic block in the function and set our builder to generate
   151|       |        // code in it.
-  152|  1.57k|        self.function_basic_block("entry", llvm_function);
+  152|  1.70k|        self.function_basic_block("entry", llvm_function);
   153|       |
   154|       |        // Codegen the function body
-  155|  1.57k|        self.codegen_statement(&function.body);
+  155|  1.70k|        self.codegen_statement(&function.body);
   156|       |
   157|       |        // Verify generated function and when fuzzing abort on failure
   158|       |        #[cfg(not(fuzzing))]
@@ -185,23 +185,23 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen16codegen_function:
   164|       |            return false;
   165|       |        }
   166|       |        #[cfg(fuzzing)]
-  167|  1.57k|        let _ = verify_function(
-  168|  1.57k|            llvm_function,
-  169|  1.57k|            LLVMVerifierFailureAction::LLVMAbortProcessAction,
-  170|  1.57k|        );
+  167|  1.70k|        let _ = verify_function(
+  168|  1.70k|            llvm_function,
+  169|  1.70k|            LLVMVerifierFailureAction::LLVMAbortProcessAction,
+  170|  1.70k|        );
   171|       |
-  172|  1.57k|        true
-  173|  1.57k|    }
+  172|  1.70k|        true
+  173|  1.70k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen17codegen_statement:
-  175|  1.57k|    fn codegen_statement(&self, statement: &Statement) {
-  176|  1.57k|        match &statement.kind {
-  177|  1.57k|            StatementKind::Return(expression) => {
-  178|  1.57k|                let value = self.codegen_expression(expression);
-  179|  1.57k|
-  180|  1.57k|                self.builder.ret(value);
-  181|  1.57k|            }
+  175|  1.70k|    fn codegen_statement(&self, statement: &Statement) {
+  176|  1.70k|        match &statement.kind {
+  177|  1.70k|            StatementKind::Return(expression) => {
+  178|  1.70k|                let value = self.codegen_expression(expression);
+  179|  1.70k|
+  180|  1.70k|                self.builder.ret(value);
+  181|  1.70k|            }
   182|       |        }
-  183|  1.57k|    }
+  183|  1.70k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen18codegen_binary_add:
   259|    198|    fn codegen_binary_add(&self, left: &Expression, right: &Expression) -> LLVMValue {
   260|    198|        let left_value = self.codegen_expression(left);
@@ -216,28 +216,28 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen18codegen_expression:
   188|  15.5k|        match &expression.kind {
   189|  5.67k|            IntegerLiteral(value) => self.const_int(*value),
   190|       |            UnaryOperation {
-  191|  4.32k|                operator,
-  192|  4.32k|                expression,
-  193|  4.32k|            } => self.codegen_unary_operation(operator, expression.as_ref()),
-  194|  1.24k|            Parenthesis(expression) => self.codegen_expression(expression),
+  191|  4.31k|                operator,
+  192|  4.31k|                expression,
+  193|  4.31k|            } => self.codegen_unary_operation(operator, expression.as_ref()),
+  194|  1.37k|            Parenthesis(expression) => self.codegen_expression(expression),
   195|       |            BinaryOperation {
-  196|  4.29k|                operator,
-  197|  4.29k|                left,
-  198|  4.29k|                right,
-  199|  4.29k|            } => self.codegen_binary_operation(operator, left, right),
+  196|  4.16k|                operator,
+  197|  4.16k|                left,
+  198|  4.16k|                right,
+  199|  4.16k|            } => self.codegen_binary_operation(operator, left, right),
   200|       |        }
   201|  15.5k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen20function_basic_block:
-   95|  1.57k|    fn function_basic_block(&self, name: &str, function: LLVMFunctionValue) -> LLVMBasicBlock {
-   96|  1.57k|        let basic_block = self
-   97|  1.57k|            .context
-   98|  1.57k|            .create_basic_block_for_function(&function, name);
+   95|  1.70k|    fn function_basic_block(&self, name: &str, function: LLVMFunctionValue) -> LLVMBasicBlock {
+   96|  1.70k|        let basic_block = self
+   97|  1.70k|            .context
+   98|  1.70k|            .create_basic_block_for_function(&function, name);
    99|       |
   100|       |        // Move the builder to the end of the basic block
-  101|  1.57k|        self.builder.position_at_end(basic_block);
+  101|  1.70k|        self.builder.position_at_end(basic_block);
   102|       |
-  103|  1.57k|        basic_block
-  104|  1.57k|    }
+  103|  1.70k|        basic_block
+  104|  1.70k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen20get_current_function:
   108|    477|    fn get_current_function(&self) -> LLVMFunctionValue {
   109|    477|        self.builder
@@ -276,22 +276,22 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen23codegen_binary_subtract:
   270|    197|        self.builder.subtract(left_value, right_value)
   271|    197|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen23codegen_unary_operation:
-  242|  4.32k|    fn codegen_unary_operation(
-  243|  4.32k|        &self,
-  244|  4.32k|        operator: &UnaryOperator,
-  245|  4.32k|        expression: &Expression,
-  246|  4.32k|    ) -> LLVMValue {
+  242|  4.31k|    fn codegen_unary_operation(
+  243|  4.31k|        &self,
+  244|  4.31k|        operator: &UnaryOperator,
+  245|  4.31k|        expression: &Expression,
+  246|  4.31k|    ) -> LLVMValue {
   247|       |        use UnaryOperator::{Complement, LogicalNot, Negate, Positive};
   248|       |
-  249|  4.32k|        let value = self.codegen_expression(expression);
+  249|  4.31k|        let value = self.codegen_expression(expression);
   250|       |
-  251|  4.32k|        match operator {
+  251|  4.31k|        match operator {
   252|    295|            Positive => value,
   253|    261|            Negate => self.negate(value),
   254|    317|            Complement => self.complement(value),
   255|  3.44k|            LogicalNot => self.logical_not(value),
   256|       |        }
-  257|  4.32k|    }
+  257|  4.31k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen24codegen_binary_less_than:
   487|    203|    fn codegen_binary_less_than(&self, left: &Expression, right: &Expression) -> LLVMValue {
   488|    203|        let left_value = self.codegen_expression(left);
@@ -303,26 +303,26 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen24codegen_binary_less_than:
   494|    203|        self.builder.zero_extend(value, self.int32_type())
   495|    203|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen24codegen_binary_operation:
-  203|  4.29k|    fn codegen_binary_operation(
-  204|  4.29k|        &self,
-  205|  4.29k|        operator: &BinaryOperator,
-  206|  4.29k|        left: &Expression,
-  207|  4.29k|        right: &Expression,
-  208|  4.29k|    ) -> LLVMValue {
+  203|  4.16k|    fn codegen_binary_operation(
+  204|  4.16k|        &self,
+  205|  4.16k|        operator: &BinaryOperator,
+  206|  4.16k|        left: &Expression,
+  207|  4.16k|        right: &Expression,
+  208|  4.16k|    ) -> LLVMValue {
   209|       |        use BinaryOperator::{
   210|       |            Add, Assignment, BitwiseAnd, BitwiseLeftShift, BitwiseOr, BitwiseRightShift,
   211|       |            BitwiseXor, Divide, Equals, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual,
   212|       |            LogicalAnd, LogicalOr, Multiply, NotEquals, Remainder, Subtract,
   213|       |        };
   214|       |
-  215|  4.29k|        match operator {
+  215|  4.16k|        match operator {
   216|    198|            Add => self.codegen_binary_add(left, right),
   217|    197|            Subtract => self.codegen_binary_subtract(left, right),
   218|    196|            Multiply => self.codegen_binary_multiply(left, right),
   219|    195|            Divide => self.codegen_binary_divide(left, right),
   220|    214|            Remainder => self.codegen_binary_remainder(left, right),
   221|    203|            BitwiseAnd => self.codegen_binary_bitwise_and(left, right),
-  222|    322|            BitwiseLeftShift => self.codegen_binary_bitwise_left_shift(left, right),
+  222|    194|            BitwiseLeftShift => self.codegen_binary_bitwise_left_shift(left, right),
   223|    195|            BitwiseOr => self.codegen_binary_bitwise_or(left, right),
   224|    200|            BitwiseRightShift => self.codegen_binary_bitwise_right_shift(left, right),
   225|    194|            BitwiseXor => self.codegen_binary_bitwise_xor(left, right),
@@ -340,7 +340,7 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen24codegen_binary_operation:
   237|    505|            GreaterThan => self.codegen_binary_greater_than(left, right),
   238|    218|            GreaterThanOrEqual => self.codegen_binary_greater_than_or_equal(left, right),
   239|       |        }
-  240|  4.29k|    }
+  240|  4.16k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen24codegen_binary_remainder:
   287|    214|    fn codegen_binary_remainder(&self, left: &Expression, right: &Expression) -> LLVMValue {
   288|    214|        let left_value = self.codegen_expression(left);
@@ -521,16 +521,16 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen27codegen_binary_greater_than
   518|    505|        self.builder.zero_extend(value, self.int32_type())
   519|    505|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen33codegen_binary_bitwise_left_shift:
-  301|    322|    fn codegen_binary_bitwise_left_shift(
-  302|    322|        &self,
-  303|    322|        left: &Expression,
-  304|    322|        right: &Expression,
-  305|    322|    ) -> LLVMValue {
-  306|    322|        let left_value = self.codegen_expression(left);
-  307|    322|        let right_value = self.codegen_expression(right);
+  301|    194|    fn codegen_binary_bitwise_left_shift(
+  302|    194|        &self,
+  303|    194|        left: &Expression,
+  304|    194|        right: &Expression,
+  305|    194|    ) -> LLVMValue {
+  306|    194|        let left_value = self.codegen_expression(left);
+  307|    194|        let right_value = self.codegen_expression(right);
   308|       |
-  309|    322|        self.builder.bitwise_left_shift(left_value, right_value)
-  310|    322|    }
+  309|    194|        self.builder.bitwise_left_shift(left_value, right_value)
+  310|    194|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen33codegen_binary_less_than_or_equal:
   497|    194|    fn codegen_binary_less_than_or_equal(
   498|    194|        &self,
@@ -592,23 +592,23 @@ _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen6negate:
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen7codegen:
   136|  1.31k|    pub fn codegen(&self, translation_unit: &TranslationUnit) {
   137|       |        // Code gen all functions
-  138|  2.89k|        for function in &translation_unit.function {
-  139|  1.57k|            self.codegen_function(function);
-  140|  1.57k|        }
+  138|  3.02k|        for function in &translation_unit.function {
+  139|  1.70k|            self.codegen_function(function);
+  140|  1.70k|        }
   141|  1.31k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen8function:
-   91|  1.57k|    fn function(&self, function_name: &str, function_type: LLVMFunctionType) -> LLVMFunctionValue {
-   92|  1.57k|        self.module.add_function(function_name, function_type)
-   93|  1.57k|    }
+   91|  1.70k|    fn function(&self, function_name: &str, function_type: LLVMFunctionType) -> LLVMFunctionValue {
+   92|  1.70k|        self.module.add_function(function_name, function_type)
+   93|  1.70k|    }
 _RNvMs0_CshCskfrbP79Y_14rustcc_codegenNtB5_7Codegen9const_int:
    87|  10.5k|    fn const_int(&self, value: u32) -> LLVMValue {
    88|  10.5k|        self.int32_type().constant_integer(u64::from(value), false)
    89|  10.5k|    }
 
 _RNvYNtNtCshDtJu3Ru83O_5alloc6string6StringNtNtNtCsbetgO7X7nK5_17rustcc_diagnostic5color4shim8Colorize4boldBK_:
-   22|  3.85k|        fn bold(self) -> Self {
-   23|  3.85k|            self
-   24|  3.85k|        }
+   22|  3.60k|        fn bold(self) -> Self {
+   23|  3.60k|            self
+   24|  3.60k|        }
 
 _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeReECsdXdbFklkXPq_12rustcc_lexer:
    87|   145k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
@@ -625,41 +625,41 @@ _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCs
    98|   145k|        }
    99|   145k|    }
 _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationNtNtCshDtJu3Ru83O_5alloc6string6StringECsdXdbFklkXPq_12rustcc_lexer:
-   87|  3.85k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
-   88|  3.85k|        id: DiagnosticId,
-   89|  3.85k|        source_range: R,
-   90|  3.85k|        message: S,
-   91|  3.85k|    ) -> Self {
-   92|  3.85k|        Self {
-   93|  3.85k|            id,
-   94|  3.85k|            level: id.level(),
-   95|  3.85k|            source_range: source_range.into(),
-   96|  3.85k|            message: message.into(),
-   97|  3.85k|            notes: Vec::new(),
-   98|  3.85k|        }
-   99|  3.85k|    }
+   87|  3.60k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
+   88|  3.60k|        id: DiagnosticId,
+   89|  3.60k|        source_range: R,
+   90|  3.60k|        message: S,
+   91|  3.60k|    ) -> Self {
+   92|  3.60k|        Self {
+   93|  3.60k|            id,
+   94|  3.60k|            level: id.level(),
+   95|  3.60k|            source_range: source_range.into(),
+   96|  3.60k|            message: message.into(),
+   97|  3.60k|            notes: Vec::new(),
+   98|  3.60k|        }
+   99|  3.60k|    }
 _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationReECsdXdbFklkXPq_12rustcc_lexer:
-   87|  2.87k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
-   88|  2.87k|        id: DiagnosticId,
-   89|  2.87k|        source_range: R,
-   90|  2.87k|        message: S,
-   91|  2.87k|    ) -> Self {
-   92|  2.87k|        Self {
-   93|  2.87k|            id,
-   94|  2.87k|            level: id.level(),
-   95|  2.87k|            source_range: source_range.into(),
-   96|  2.87k|            message: message.into(),
-   97|  2.87k|            notes: Vec::new(),
-   98|  2.87k|        }
-   99|  2.87k|    }
+   87|  2.68k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
+   88|  2.68k|        id: DiagnosticId,
+   89|  2.68k|        source_range: R,
+   90|  2.68k|        message: S,
+   91|  2.68k|    ) -> Self {
+   92|  2.68k|        Self {
+   93|  2.68k|            id,
+   94|  2.68k|            level: id.level(),
+   95|  2.68k|            source_range: source_range.into(),
+   96|  2.68k|            message: message.into(),
+   97|  2.68k|            notes: Vec::new(),
+   98|  2.68k|        }
+   99|  2.68k|    }
 _RNvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB2_10Diagnostic10is_warning:
   107|   151k|    pub const fn is_warning(&self) -> bool {
   108|   151k|        matches!(self.level, DiagnosticLevel::Warning)
   109|   151k|    }
 _RNvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB2_10Diagnostic14is_fatal_error:
-  117|   154k|    pub const fn is_fatal_error(&self) -> bool {
-  118|   154k|        matches!(self.level, DiagnosticLevel::FatalError)
-  119|   154k|    }
+  117|   153k|    pub const fn is_fatal_error(&self) -> bool {
+  118|   153k|        matches!(self.level, DiagnosticLevel::FatalError)
+  119|   153k|    }
 _RNvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB2_10Diagnostic17is_error_or_fatal:
   122|   151k|    pub const fn is_error_or_fatal(&self) -> bool {
   123|   151k|        self.is_error() || self.is_fatal_error()
@@ -722,7 +722,7 @@ _RNvMNtCsbetgO7X7nK5_17rustcc_diagnostic17diagnostic_engineNtB2_16DiagnosticEngi
    47|   151k|        }
    48|       |
    49|   151k|        if diagnostic.is_warning() {
-   50|  2.43k|            self.number_of_warnings += 1;
+   50|  2.24k|            self.number_of_warnings += 1;
    51|   149k|        }
    52|       |
    53|   151k|        self.consumer.report(diagnostic);
@@ -750,39 +750,39 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   129|   161k|        match self.state {
   130|   113k|            LexerState::Start => match self.peek_next() {
   131|       |                // Whitespaces and newlines
-  132|    526|                Some('\n') => {
-  133|    526|                    self.consume_character();
-  134|    526|
-  135|    526|                    self.line += 1;
-  136|    526|                    self.column = 1;
-  137|    526|                }
+  132|    542|                Some('\n') => {
+  133|    542|                    self.consume_character();
+  134|    542|
+  135|    542|                    self.line += 1;
+  136|    542|                    self.column = 1;
+  137|    542|                }
   138|   113k|                Some(character) if character.is_whitespace() => {
   139|  1.12k|                    self.consume_character();
   140|  1.12k|                }
   141|       |
   142|   112k|                Some(character) if character.is_ascii_alphabetic() || character == '_' => {
-  143|  6.86k|                    self.token_begin_location = self.current_location();
-  144|  6.86k|                    self.state = LexerState::Identifier;
-  145|  6.86k|                }
+  143|  6.82k|                    self.token_begin_location = self.current_location();
+  144|  6.82k|                    self.state = LexerState::Identifier;
+  145|  6.82k|                }
   146|   105k|                Some(character) if character.is_ascii_digit() => {
-  147|  13.5k|                    self.token_begin_location = self.current_location();
-  148|  13.5k|                    self.state = LexerState::IntegerLiteral;
-  149|  13.5k|                }
+  147|  13.6k|                    self.token_begin_location = self.current_location();
+  148|  13.6k|                    self.state = LexerState::IntegerLiteral;
+  149|  13.6k|                }
   150|       |
-  151|  1.28k|                Some('/') => {
-  152|  1.28k|                    self.token_begin_location = self.current_location();
-  153|  1.28k|                    self.consume_character();
-  154|  1.28k|                    self.state = LexerState::AfterSlash;
-  155|  1.28k|                }
+  151|  1.15k|                Some('/') => {
+  152|  1.15k|                    self.token_begin_location = self.current_location();
+  153|  1.15k|                    self.consume_character();
+  154|  1.15k|                    self.state = LexerState::AfterSlash;
+  155|  1.15k|                }
   156|       |
   157|       |                // Symbols
-  158|  52.8k|                Some('(') => {
-  159|  52.8k|                    let location = self.current_location();
-  160|  52.8k|
-  161|  52.8k|                    self.queued_tokens
-  162|  52.8k|                        .push_back(Token::new_left_parenthesis(location));
-  163|  52.8k|                    self.consume_character();
-  164|  52.8k|                }
+  158|  53.0k|                Some('(') => {
+  159|  53.0k|                    let location = self.current_location();
+  160|  53.0k|
+  161|  53.0k|                    self.queued_tokens
+  162|  53.0k|                        .push_back(Token::new_left_parenthesis(location));
+  163|  53.0k|                    self.consume_character();
+  164|  53.0k|                }
   165|  1.06k|                Some(')') => {
   166|  1.06k|                    let location = self.current_location();
   167|  1.06k|
@@ -790,13 +790,13 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   169|  1.06k|                        .push_back(Token::new_right_parenthesis(location));
   170|  1.06k|                    self.consume_character();
   171|  1.06k|                }
-  172|    907|                Some('{') => {
-  173|    907|                    let location = self.current_location();
-  174|    907|
-  175|    907|                    self.queued_tokens
-  176|    907|                        .push_back(Token::new_left_brace(location));
-  177|    907|                    self.consume_character();
-  178|    907|                }
+  172|    909|                Some('{') => {
+  173|    909|                    let location = self.current_location();
+  174|    909|
+  175|    909|                    self.queued_tokens
+  176|    909|                        .push_back(Token::new_left_brace(location));
+  177|    909|                    self.consume_character();
+  178|    909|                }
   179|    641|                Some('}') => {
   180|    641|                    let location = self.current_location();
   181|    641|
@@ -804,43 +804,43 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   183|    641|                        .push_back(Token::new_right_brace(location));
   184|    641|                    self.consume_character();
   185|    641|                }
-  186|  1.99k|                Some(';') => {
-  187|  1.99k|                    let location = self.current_location();
-  188|  1.99k|
-  189|  1.99k|                    self.queued_tokens.push_back(Token::new_semicolon(location));
-  190|  1.99k|                    self.consume_character();
-  191|  1.99k|                }
+  186|  2.12k|                Some(';') => {
+  187|  2.12k|                    let location = self.current_location();
+  188|  2.12k|
+  189|  2.12k|                    self.queued_tokens.push_back(Token::new_semicolon(location));
+  190|  2.12k|                    self.consume_character();
+  191|  2.12k|                }
   192|  1.10k|                Some('~') => {
   193|  1.10k|                    let location = self.current_location();
   194|  1.10k|
   195|  1.10k|                    self.queued_tokens.push_back(Token::new_tilde(location));
   196|  1.10k|                    self.consume_character();
   197|  1.10k|                }
-  198|  1.77k|                Some('-') => {
-  199|  1.77k|                    let location = self.current_location();
-  200|  1.77k|                    self.token_begin_location = location;
-  201|  1.77k|
-  202|  1.77k|                    self.state = LexerState::AfterMinus;
-  203|  1.77k|                    self.consume_character();
-  204|  1.77k|                }
-  205|  2.33k|                Some('+') => {
-  206|  2.33k|                    self.token_begin_location = self.current_location();
-  207|  2.33k|
-  208|  2.33k|                    self.state = LexerState::AfterPlus;
-  209|  2.33k|                    self.consume_character();
-  210|  2.33k|                }
-  211|  1.01k|                Some('*') => {
-  212|  1.01k|                    let location = self.current_location();
-  213|  1.01k|
-  214|  1.01k|                    self.queued_tokens.push_back(Token::new_star(location));
-  215|  1.01k|                    self.consume_character();
-  216|  1.01k|                }
-  217|  1.08k|                Some('%') => {
-  218|  1.08k|                    let location = self.current_location();
-  219|  1.08k|
-  220|  1.08k|                    self.queued_tokens.push_back(Token::new_percent(location));
-  221|  1.08k|                    self.consume_character();
-  222|  1.08k|                }
+  198|  1.78k|                Some('-') => {
+  199|  1.78k|                    let location = self.current_location();
+  200|  1.78k|                    self.token_begin_location = location;
+  201|  1.78k|
+  202|  1.78k|                    self.state = LexerState::AfterMinus;
+  203|  1.78k|                    self.consume_character();
+  204|  1.78k|                }
+  205|  2.32k|                Some('+') => {
+  206|  2.32k|                    self.token_begin_location = self.current_location();
+  207|  2.32k|
+  208|  2.32k|                    self.state = LexerState::AfterPlus;
+  209|  2.32k|                    self.consume_character();
+  210|  2.32k|                }
+  211|  1.07k|                Some('*') => {
+  212|  1.07k|                    let location = self.current_location();
+  213|  1.07k|
+  214|  1.07k|                    self.queued_tokens.push_back(Token::new_star(location));
+  215|  1.07k|                    self.consume_character();
+  216|  1.07k|                }
+  217|  1.20k|                Some('%') => {
+  218|  1.20k|                    let location = self.current_location();
+  219|  1.20k|
+  220|  1.20k|                    self.queued_tokens.push_back(Token::new_percent(location));
+  221|  1.20k|                    self.consume_character();
+  222|  1.20k|                }
   223|  1.45k|                Some('&') => {
   224|  1.45k|                    let location = self.current_location();
   225|  1.45k|                    self.token_begin_location = location;
@@ -848,13 +848,13 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   227|  1.45k|                    self.state = LexerState::AfterAmpersand;
   228|  1.45k|                    self.consume_character();
   229|  1.45k|                }
-  230|  1.58k|                Some('|') => {
-  231|  1.58k|                    let location = self.current_location();
-  232|  1.58k|                    self.token_begin_location = location;
-  233|  1.58k|
-  234|  1.58k|                    self.state = LexerState::AfterPipe;
-  235|  1.58k|                    self.consume_character();
-  236|  1.58k|                }
+  230|  1.55k|                Some('|') => {
+  231|  1.55k|                    let location = self.current_location();
+  232|  1.55k|                    self.token_begin_location = location;
+  233|  1.55k|
+  234|  1.55k|                    self.state = LexerState::AfterPipe;
+  235|  1.55k|                    self.consume_character();
+  236|  1.55k|                }
   237|    800|                Some('^') => {
   238|    800|                    let location = self.current_location();
   239|    800|
@@ -882,63 +882,63 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   261|  1.98k|                    self.state = LexerState::AfterEquals;
   262|  1.98k|                    self.consume_character();
   263|  1.98k|                }
-  264|  8.48k|                Some('!') => {
-  265|  8.48k|                    let location = self.current_location();
-  266|  8.48k|                    self.token_begin_location = location;
-  267|  8.48k|
-  268|  8.48k|                    self.state = LexerState::AfterBang;
-  269|  8.48k|                    self.consume_character();
-  270|  8.48k|                }
+  264|  8.49k|                Some('!') => {
+  265|  8.49k|                    let location = self.current_location();
+  266|  8.49k|                    self.token_begin_location = location;
+  267|  8.49k|
+  268|  8.49k|                    self.state = LexerState::AfterBang;
+  269|  8.49k|                    self.consume_character();
+  270|  8.49k|                }
   271|       |
-  272|  2.43k|                Some('\0') => {
-  273|  2.43k|                    self.diagnostic_here(DiagnosticId::NullCharacter, "null character ignored");
-  274|  2.43k|
-  275|  2.43k|                    self.consume_character();
-  276|  2.43k|                }
+  272|  2.24k|                Some('\0') => {
+  273|  2.24k|                    self.diagnostic_here(DiagnosticId::NullCharacter, "null character ignored");
+  274|  2.24k|
+  275|  2.24k|                    self.consume_character();
+  276|  2.24k|                }
   277|       |
   278|      0|                None => {}
   279|       |
-  280|  3.85k|                Some(character) => {
-  281|  3.85k|                    self.diagnostic_here(
-  282|  3.85k|                        DiagnosticId::UnexpectedCharacter,
-  283|  3.85k|                        format!(
-  284|  3.85k|                            "unexpected character '{}' found",
-  285|  3.85k|                            character.to_string().bold()
-  286|  3.85k|                        ),
-  287|  3.85k|                    );
-  288|  3.85k|
-  289|  3.85k|                    self.consume_character();
-  290|  3.85k|                }
+  280|  3.60k|                Some(character) => {
+  281|  3.60k|                    self.diagnostic_here(
+  282|  3.60k|                        DiagnosticId::UnexpectedCharacter,
+  283|  3.60k|                        format!(
+  284|  3.60k|                            "unexpected character '{}' found",
+  285|  3.60k|                            character.to_string().bold()
+  286|  3.60k|                        ),
+  287|  3.60k|                    );
+  288|  3.60k|
+  289|  3.60k|                    self.consume_character();
+  290|  3.60k|                }
   291|       |            },
   292|       |
   293|       |            LexerState::Identifier => loop {
-  294|  31.9k|                match self.peek_next() {
-  295|  31.8k|                    Some(character) if character.is_ascii_alphanumeric() || character == '_' => {
+  294|  31.8k|                match self.peek_next() {
+  295|  31.7k|                    Some(character) if character.is_ascii_alphanumeric() || character == '_' => {
   296|  25.0k|                        self.token_end_location = self.current_location();
   297|  25.0k|                        self.consume_character();
   298|  25.0k|                    }
   299|       |                    _ => {
   300|       |                        // Emit identifier token
-  301|  6.86k|                        let token = Token::new_identifier(SourceRange::new(
-  302|  6.86k|                            self.token_begin_location,
-  303|  6.86k|                            self.token_end_location,
+  301|  6.82k|                        let token = Token::new_identifier(SourceRange::new(
+  302|  6.82k|                            self.token_begin_location,
+  303|  6.82k|                            self.token_end_location,
   304|       |                        ));
-  305|  6.86k|                        self.queued_tokens.push_back(token);
+  305|  6.82k|                        self.queued_tokens.push_back(token);
   306|       |
-  307|  6.86k|                        self.state = LexerState::Start;
-  308|  6.86k|                        break;
+  307|  6.82k|                        self.state = LexerState::Start;
+  308|  6.82k|                        break;
   309|       |                    }
   310|       |                }
   311|       |            },
   312|       |
   313|       |            LexerState::IntegerLiteral => {
-  314|  13.5k|                let mut value: u32 = 0;
+  314|  13.6k|                let mut value: u32 = 0;
   315|       |                loop {
-  316|  30.6k|                    match self.peek_next() {
-  317|  30.5k|                        Some(character) if character.is_ascii_digit() => {
+  316|  30.8k|                    match self.peek_next() {
+  317|  30.7k|                        Some(character) if character.is_ascii_digit() => {
   318|       |                            // Multiply the current value by 10 and check for
   319|       |                            // any overflow
-  320|  17.5k|                            let Some(temp_value) = value.checked_mul(10) else {
+  320|  17.6k|                            let Some(temp_value) = value.checked_mul(10) else {
   321|    226|                                self.state = LexerState::IntegerLiteralOverflow;
   322|    226|                                break;
   323|       |                            };
@@ -946,20 +946,20 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   325|       |                            // Convert the current character to an actual base
   326|       |                            // 10 number
   327|       |                            #[expect(clippy::unwrap_used)]
-  328|  17.3k|                            let character_value = character.to_digit(10).unwrap();
+  328|  17.4k|                            let character_value = character.to_digit(10).unwrap();
   329|       |
   330|       |                            // Add the current character value to the current
   331|       |                            // value and check for any overflow
-  332|  17.3k|                            let Some(temp_value) = temp_value.checked_add(character_value) else {
+  332|  17.4k|                            let Some(temp_value) = temp_value.checked_add(character_value) else {
   333|    194|                                self.state = LexerState::IntegerLiteralOverflow;
   334|    194|                                break;
   335|       |                            };
   336|       |
   337|       |                            // Update the current value and consume the
   338|       |                            // character
-  339|  17.1k|                            value = temp_value;
-  340|  17.1k|                            self.token_end_location = self.current_location();
-  341|  17.1k|                            self.consume_character();
+  339|  17.2k|                            value = temp_value;
+  340|  17.2k|                            self.token_end_location = self.current_location();
+  341|  17.2k|                            self.consume_character();
   342|       |                        }
   343|       |                        _ => {
   344|  13.1k|                            let token = Token::new_integer_literal(
@@ -1005,18 +1005,18 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   384|       |            }
   385|       |
   386|       |            LexerState::AfterSlash => {
-  387|  1.27k|                match self.peek_next() {
+  387|  1.14k|                match self.peek_next() {
   388|    226|                    Some('/') => {
   389|    226|                        // Two slashes in a row, the rest of the line thus is a
   390|    226|                        // comment
   391|    226|                        self.consume_character();
   392|    226|                        self.state = LexerState::LineComment;
   393|    226|                    }
-  394|    365|                    Some('*') => {
-  395|    365|                        // Start of a multi-line comment
-  396|    365|                        self.consume_character();
-  397|    365|                        self.state = LexerState::MultiLineComment;
-  398|    365|                    }
+  394|    237|                    Some('*') => {
+  395|    237|                        // Start of a multi-line comment
+  396|    237|                        self.consume_character();
+  397|    237|                        self.state = LexerState::MultiLineComment;
+  398|    237|                    }
   399|       |
   400|    685|                    Some(_) => {
   401|    685|                        self.queued_tokens
@@ -1049,11 +1049,11 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   428|      0|                None => {}
   429|       |            },
   430|       |
-  431|  1.22k|            LexerState::MultiLineComment => match self.peek_next() {
-  432|    736|                Some('*') => {
-  433|    736|                    self.consume_character();
-  434|    736|                    self.state = LexerState::MultiLineCommentAfterStar;
-  435|    736|                }
+  431|  1.08k|            LexerState::MultiLineComment => match self.peek_next() {
+  432|    608|                Some('*') => {
+  433|    608|                    self.consume_character();
+  434|    608|                    self.state = LexerState::MultiLineCommentAfterStar;
+  435|    608|                }
   436|       |
   437|    205|                Some('\n') => {
   438|    205|                    self.consume_character();
@@ -1062,9 +1062,9 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   441|    205|                    self.column = 1;
   442|    205|                }
   443|       |
-  444|    279|                Some(_) => {
-  445|    279|                    self.consume_character();
-  446|    279|                }
+  444|    271|                Some(_) => {
+  445|    271|                    self.consume_character();
+  446|    271|                }
   447|       |
   448|      0|                None => {
   449|      0|                    // TODO: This is an untermianted multiline comment error
@@ -1072,12 +1072,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   451|       |            },
   452|       |
   453|       |            LexerState::MultiLineCommentAfterStar => {
-  454|    735|                match self.peek_next() {
-  455|    326|                    Some('/') => {
-  456|    326|                        // */ Indicates the end of the multi-line comment
-  457|    326|                        self.consume_character();
-  458|    326|                        self.state = LexerState::Start;
-  459|    326|                    }
+  454|    607|                match self.peek_next() {
+  455|    198|                    Some('/') => {
+  456|    198|                        // */ Indicates the end of the multi-line comment
+  457|    198|                        self.consume_character();
+  458|    198|                        self.state = LexerState::Start;
+  459|    198|                    }
   460|       |
   461|    199|                    Some('\n') => {
   462|    199|                        self.consume_character();
@@ -1112,12 +1112,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   491|    229|                    self.state = LexerState::Start;
   492|    229|                }
   493|       |
-  494|  1.54k|                Some(_) => {
-  495|  1.54k|                    self.queued_tokens
-  496|  1.54k|                        .push_back(Token::new_minus(self.token_begin_location));
-  497|  1.54k|
-  498|  1.54k|                    self.state = LexerState::Start;
-  499|  1.54k|                }
+  494|  1.55k|                Some(_) => {
+  495|  1.55k|                    self.queued_tokens
+  496|  1.55k|                        .push_back(Token::new_minus(self.token_begin_location));
+  497|  1.55k|
+  498|  1.55k|                    self.state = LexerState::Start;
+  499|  1.55k|                }
   500|       |
   501|      0|                None => {
   502|      0|                    let location =
@@ -1137,12 +1137,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   516|    275|                    self.state = LexerState::Start;
   517|    275|                }
   518|       |
-  519|  2.04k|                _ => {
-  520|  2.04k|                    self.queued_tokens
-  521|  2.04k|                        .push_back(Token::new_plus(self.token_begin_location));
-  522|  2.04k|
-  523|  2.04k|                    self.state = LexerState::Start;
-  524|  2.04k|                }
+  519|  2.03k|                _ => {
+  520|  2.03k|                    self.queued_tokens
+  521|  2.03k|                        .push_back(Token::new_plus(self.token_begin_location));
+  522|  2.03k|
+  523|  2.03k|                    self.state = LexerState::Start;
+  524|  2.03k|                }
   525|       |            },
   526|       |
   527|  2.58k|            LexerState::AfterLessThan => match self.peek_next() {
@@ -1156,23 +1156,23 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   535|    460|
   536|    460|                    self.state = LexerState::Start;
   537|    460|                }
-  538|    773|                Some('<') => {
-  539|    773|                    let location =
-  540|    773|                        SourceRange::new(self.token_begin_location, self.current_location());
-  541|    773|
-  542|    773|                    self.consume_character();
-  543|    773|                    self.queued_tokens
-  544|    773|                        .push_back(Token::new_less_than_less_than(location));
-  545|    773|
-  546|    773|                    self.state = LexerState::Start;
-  547|    773|                }
+  538|    688|                Some('<') => {
+  539|    688|                    let location =
+  540|    688|                        SourceRange::new(self.token_begin_location, self.current_location());
+  541|    688|
+  542|    688|                    self.consume_character();
+  543|    688|                    self.queued_tokens
+  544|    688|                        .push_back(Token::new_less_than_less_than(location));
+  545|    688|
+  546|    688|                    self.state = LexerState::Start;
+  547|    688|                }
   548|       |
-  549|  1.34k|                _ => {
-  550|  1.34k|                    self.queued_tokens
-  551|  1.34k|                        .push_back(Token::new_less_than(self.token_begin_location));
-  552|  1.34k|
-  553|  1.34k|                    self.state = LexerState::Start;
-  554|  1.34k|                }
+  549|  1.43k|                _ => {
+  550|  1.43k|                    self.queued_tokens
+  551|  1.43k|                        .push_back(Token::new_less_than(self.token_begin_location));
+  552|  1.43k|
+  553|  1.43k|                    self.state = LexerState::Start;
+  554|  1.43k|                }
   555|       |            },
   556|       |
   557|  2.65k|            LexerState::AfterGreaterThan => match self.peek_next() {
@@ -1225,7 +1225,7 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   604|    843|                }
   605|       |            },
   606|       |
-  607|  1.57k|            LexerState::AfterPipe => match self.peek_next() {
+  607|  1.54k|            LexerState::AfterPipe => match self.peek_next() {
   608|    561|                Some('|') => {
   609|    561|                    let location =
   610|    561|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1236,15 +1236,15 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   615|    561|                    self.state = LexerState::Start;
   616|    561|                }
   617|       |
-  618|  1.01k|                _ => {
-  619|  1.01k|                    self.queued_tokens
-  620|  1.01k|                        .push_back(Token::new_pipe(self.token_begin_location));
-  621|  1.01k|
-  622|  1.01k|                    self.state = LexerState::Start;
-  623|  1.01k|                }
+  618|    985|                _ => {
+  619|    985|                    self.queued_tokens
+  620|    985|                        .push_back(Token::new_pipe(self.token_begin_location));
+  621|    985|
+  622|    985|                    self.state = LexerState::Start;
+  623|    985|                }
   624|       |            },
   625|       |
-  626|  8.46k|            LexerState::AfterBang => match self.peek_next() {
+  626|  8.47k|            LexerState::AfterBang => match self.peek_next() {
   627|    521|                Some('=') => {
   628|    521|                    let location =
   629|    521|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1256,12 +1256,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   635|    521|                    self.state = LexerState::Start;
   636|    521|                }
   637|       |
-  638|  7.94k|                _ => {
-  639|  7.94k|                    self.queued_tokens
-  640|  7.94k|                        .push_back(Token::new_bang(self.token_begin_location));
-  641|  7.94k|
-  642|  7.94k|                    self.state = LexerState::Start;
-  643|  7.94k|                }
+  638|  7.95k|                _ => {
+  639|  7.95k|                    self.queued_tokens
+  640|  7.95k|                        .push_back(Token::new_bang(self.token_begin_location));
+  641|  7.95k|
+  642|  7.95k|                    self.state = LexerState::Start;
+  643|  7.95k|                }
   644|       |            },
   645|       |
   646|  1.98k|            LexerState::AfterEquals => match self.peek_next() {
@@ -1276,12 +1276,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   655|    732|                    self.state = LexerState::Start;
   656|    732|                }
   657|       |
-  658|  1.25k|                _ => {
-  659|  1.25k|                    self.queued_tokens
-  660|  1.25k|                        .push_back(Token::new_equals(self.token_begin_location));
-  661|  1.25k|
-  662|  1.25k|                    self.state = LexerState::Start;
-  663|  1.25k|                }
+  658|  1.24k|                _ => {
+  659|  1.24k|                    self.queued_tokens
+  660|  1.24k|                        .push_back(Token::new_equals(self.token_begin_location));
+  661|  1.24k|
+  662|  1.24k|                    self.state = LexerState::Start;
+  663|  1.24k|                }
   664|       |            },
   665|       |        }
   666|   161k|    }
@@ -1311,20 +1311,20 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer8tokenize:
    83|  1.31k|        self.queued_tokens.drain(..).collect()
    84|  1.31k|    }
 _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer9peek_next:
-   86|   349k|    fn peek_next(&self) -> Option<char> {
-   87|   349k|        self.source_file.content[self.index..].chars().next()
-   88|   349k|    }
+   86|   348k|    fn peek_next(&self) -> Option<char> {
+   87|   348k|        self.source_file.content[self.index..].chars().next()
+   88|   348k|    }
 _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer10diagnosticNtNtCshDtJu3Ru83O_5alloc6string6StringNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB3_:
-  104|  3.85k|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
-  105|  3.85k|        &'_ self,
-  106|  3.85k|        id: DiagnosticId,
-  107|  3.85k|        source_range: R,
-  108|  3.85k|        message: S,
-  109|  3.85k|    ) -> DiagnosticBuilder<'_> {
-  110|  3.85k|        let diagnostic = Diagnostic::new(id, source_range, message);
+  104|  3.60k|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
+  105|  3.60k|        &'_ self,
+  106|  3.60k|        id: DiagnosticId,
+  107|  3.60k|        source_range: R,
+  108|  3.60k|        message: S,
+  109|  3.60k|    ) -> DiagnosticBuilder<'_> {
+  110|  3.60k|        let diagnostic = Diagnostic::new(id, source_range, message);
   111|       |
-  112|  3.85k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
-  113|  3.85k|    }
+  112|  3.60k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
+  113|  3.60k|    }
 _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer10diagnosticReNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB3_:
   104|    420|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
   105|    420|        &'_ self,
@@ -1337,41 +1337,41 @@ _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer10diagnosticReNtNtCsgxSeqfT5AE1_13r
   112|    420|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
   113|    420|    }
 _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer10diagnosticReNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB3_:
-  104|  2.43k|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
-  105|  2.43k|        &'_ self,
-  106|  2.43k|        id: DiagnosticId,
-  107|  2.43k|        source_range: R,
-  108|  2.43k|        message: S,
-  109|  2.43k|    ) -> DiagnosticBuilder<'_> {
-  110|  2.43k|        let diagnostic = Diagnostic::new(id, source_range, message);
+  104|  2.24k|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
+  105|  2.24k|        &'_ self,
+  106|  2.24k|        id: DiagnosticId,
+  107|  2.24k|        source_range: R,
+  108|  2.24k|        message: S,
+  109|  2.24k|    ) -> DiagnosticBuilder<'_> {
+  110|  2.24k|        let diagnostic = Diagnostic::new(id, source_range, message);
   111|       |
-  112|  2.43k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
-  113|  2.43k|    }
+  112|  2.24k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
+  113|  2.24k|    }
 _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer15diagnostic_hereNtNtCshDtJu3Ru83O_5alloc6string6StringEB3_:
-  115|  3.85k|    fn diagnostic_here<S: Into<String>>(
-  116|  3.85k|        &'_ self,
-  117|  3.85k|        id: DiagnosticId,
-  118|  3.85k|        message: S,
-  119|  3.85k|    ) -> DiagnosticBuilder<'_> {
-  120|  3.85k|        let location = self.current_location();
+  115|  3.60k|    fn diagnostic_here<S: Into<String>>(
+  116|  3.60k|        &'_ self,
+  117|  3.60k|        id: DiagnosticId,
+  118|  3.60k|        message: S,
+  119|  3.60k|    ) -> DiagnosticBuilder<'_> {
+  120|  3.60k|        let location = self.current_location();
   121|       |
-  122|  3.85k|        self.diagnostic(id, location, message)
-  123|  3.85k|    }
+  122|  3.60k|        self.diagnostic(id, location, message)
+  123|  3.60k|    }
 _RINvMCsdXdbFklkXPq_12rustcc_lexerNtB3_5Lexer15diagnostic_hereReEB3_:
-  115|  2.43k|    fn diagnostic_here<S: Into<String>>(
-  116|  2.43k|        &'_ self,
-  117|  2.43k|        id: DiagnosticId,
-  118|  2.43k|        message: S,
-  119|  2.43k|    ) -> DiagnosticBuilder<'_> {
-  120|  2.43k|        let location = self.current_location();
+  115|  2.24k|    fn diagnostic_here<S: Into<String>>(
+  116|  2.24k|        &'_ self,
+  117|  2.24k|        id: DiagnosticId,
+  118|  2.24k|        message: S,
+  119|  2.24k|    ) -> DiagnosticBuilder<'_> {
+  120|  2.24k|        let location = self.current_location();
   121|       |
-  122|  2.43k|        self.diagnostic(id, location, message)
-  123|  2.43k|    }
+  122|  2.24k|        self.diagnostic(id, location, message)
+  123|  2.24k|    }
 
 _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind13is_identifier:
-   71|  21.2k|    pub const fn is_identifier(&self) -> bool {
-   72|  21.2k|        matches!(self, Self::Identifier(_))
-   73|  21.2k|    }
+   71|  21.1k|    pub const fn is_identifier(&self) -> bool {
+   72|  21.1k|        matches!(self, Self::Identifier(_))
+   73|  21.1k|    }
 _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind14unary_operator:
   135|  7.69k|    pub const fn unary_operator(&self) -> Option<UnaryOperator> {
   136|       |        #[expect(clippy::wildcard_enum_match_arm)]
@@ -1385,14 +1385,14 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind14unary_operator:
   144|       |        }
   145|  7.69k|    }
 _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15binary_operator:
-  107|  18.5k|    pub const fn binary_operator(&self) -> Option<BinaryOperator> {
+  107|  18.8k|    pub const fn binary_operator(&self) -> Option<BinaryOperator> {
   108|       |        #[expect(clippy::wildcard_enum_match_arm)]
-  109|  18.5k|        match self {
+  109|  18.8k|        match self {
   110|    725|            Self::Plus => Some(BinaryOperator::Add),
-  111|    711|            Self::Minus => Some(BinaryOperator::Subtract),
+  111|    720|            Self::Minus => Some(BinaryOperator::Subtract),
   112|    705|            Self::Star => Some(BinaryOperator::Multiply),
   113|    607|            Self::Slash => Some(BinaryOperator::Divide),
-  114|    798|            Self::Percent => Some(BinaryOperator::Remainder),
+  114|    921|            Self::Percent => Some(BinaryOperator::Remainder),
   115|    629|            Self::Ampersand => Some(BinaryOperator::BitwiseAnd),
   116|    578|            Self::AmpersandAmpersand => Some(BinaryOperator::LogicalAnd),
   117|    646|            Self::Caret => Some(BinaryOperator::BitwiseXor),
@@ -1401,63 +1401,63 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15binary_operator:
   120|    790|            Self::Equals => Some(BinaryOperator::Assignment),
   121|    806|            Self::EqualsEquals => Some(BinaryOperator::Equals),
   122|    562|            Self::BangEquals => Some(BinaryOperator::NotEquals),
-  123|    820|            Self::LessThan => Some(BinaryOperator::LessThan),
+  123|    986|            Self::LessThan => Some(BinaryOperator::LessThan),
   124|    559|            Self::LessThanEqual => Some(BinaryOperator::LessThanOrEqual),
-  125|    900|            Self::LessThanLessThan => Some(BinaryOperator::BitwiseLeftShift),
+  125|    731|            Self::LessThanLessThan => Some(BinaryOperator::BitwiseLeftShift),
   126|  1.17k|            Self::GreaterThan => Some(BinaryOperator::GreaterThan),
   127|    467|            Self::GreaterThanEqual => Some(BinaryOperator::GreaterThanOrEqual),
   128|    502|            Self::GreaterThanGreaterThan => Some(BinaryOperator::BitwiseRightShift),
   129|       |
-  130|  4.99k|            _ => None,
+  130|  5.12k|            _ => None,
   131|       |        }
-  132|  18.5k|    }
+  132|  18.8k|    }
 _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15from_identifier:
-   53|  6.86k|    pub fn from_identifier(identifier: &str) -> Self {
-   54|  6.86k|        match identifier {
-   55|  6.86k|            "int" => Self::KeywordInt,
-   56|  6.67k|            "return" => Self::KeywordReturn,
-   57|  3.70k|            "void" => Self::KeywordVoid,
-   58|  3.50k|            _ => Self::Identifier(identifier.to_owned()),
+   53|  6.82k|    pub fn from_identifier(identifier: &str) -> Self {
+   54|  6.82k|        match identifier {
+   55|  6.82k|            "int" => Self::KeywordInt,
+   56|  6.62k|            "return" => Self::KeywordReturn,
+   57|  3.65k|            "void" => Self::KeywordVoid,
+   58|  3.46k|            _ => Self::Identifier(identifier.to_owned()),
    59|       |        }
-   60|  6.86k|    }
+   60|  6.82k|    }
 _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind17is_unary_operator:
-  102|  58.7k|    pub const fn is_unary_operator(&self) -> bool {
-  103|  58.7k|        matches!(self, Self::Plus | Self::Minus | Self::Tilde | Self::Bang)
-  104|  58.7k|    }
+  102|  58.9k|    pub const fn is_unary_operator(&self) -> bool {
+  103|  58.9k|        matches!(self, Self::Plus | Self::Minus | Self::Tilde | Self::Bang)
+  104|  58.9k|    }
 _RNvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB4_5Token13is_identifier:
-  517|  21.2k|    pub const fn is_identifier(&self) -> bool {
-  518|  21.2k|        self.kind.is_identifier()
-  519|  21.2k|    }
+  517|  21.1k|    pub const fn is_identifier(&self) -> bool {
+  518|  21.1k|        self.kind.is_identifier()
+  519|  21.1k|    }
 _RNvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB4_5Token14unary_operator:
   537|  7.69k|    pub const fn unary_operator(&self) -> Option<UnaryOperator> {
   538|  7.69k|        self.kind.unary_operator()
   539|  7.69k|    }
 _RNvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB4_5Token15binary_operator:
-  532|  18.5k|    pub const fn binary_operator(&self) -> Option<BinaryOperator> {
-  533|  18.5k|        self.kind.binary_operator()
-  534|  18.5k|    }
+  532|  18.8k|    pub const fn binary_operator(&self) -> Option<BinaryOperator> {
+  533|  18.8k|        self.kind.binary_operator()
+  534|  18.8k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token10new_equalsNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  398|  1.25k|    pub fn new_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  399|  1.25k|        let range = range.into();
+  398|  1.24k|    pub fn new_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  399|  1.24k|        let range = range.into();
   400|       |
-  401|  1.25k|        debug_assert_eq!(range.source_text().unwrap_or(""), "=", "Expected '='");
+  401|  1.24k|        debug_assert_eq!(range.source_text().unwrap_or(""), "=", "Expected '='");
   402|       |
-  403|  1.25k|        Self {
-  404|  1.25k|            kind: TokenKind::Equals,
-  405|  1.25k|            range,
-  406|  1.25k|        }
-  407|  1.25k|    }
+  403|  1.24k|        Self {
+  404|  1.24k|            kind: TokenKind::Equals,
+  405|  1.24k|            range,
+  406|  1.24k|        }
+  407|  1.24k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token11new_percentNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  326|  1.08k|    pub fn new_percent<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  327|  1.08k|        let range = range.into();
+  326|  1.20k|    pub fn new_percent<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  327|  1.20k|        let range = range.into();
   328|       |
-  329|  1.08k|        debug_assert_eq!(range.source_text().unwrap_or(""), "%", "Expected '%'");
+  329|  1.20k|        debug_assert_eq!(range.source_text().unwrap_or(""), "%", "Expected '%'");
   330|       |
-  331|  1.08k|        Self {
-  332|  1.08k|            kind: TokenKind::Percent,
-  333|  1.08k|            range,
-  334|  1.08k|        }
-  335|  1.08k|    }
+  331|  1.20k|        Self {
+  332|  1.20k|            kind: TokenKind::Percent,
+  333|  1.20k|            range,
+  334|  1.20k|        }
+  335|  1.20k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_ampersandNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   338|    843|    pub fn new_ampersand<R: Into<SourceRange<'a>>>(range: R) -> Self {
   339|    843|        let range = range.into();
@@ -1470,16 +1470,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_ampersandNtNtCsgxSe
   346|    843|        }
   347|    843|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_less_thanNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  445|  1.34k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  446|  1.34k|        let range = range.into();
+  445|  1.43k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  446|  1.43k|        let range = range.into();
   447|       |
-  448|  1.34k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
+  448|  1.43k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
   449|       |
-  450|  1.34k|        Self {
-  451|  1.34k|            kind: TokenKind::LessThan,
-  452|  1.34k|            range,
-  453|  1.34k|        }
-  454|  1.34k|    }
+  450|  1.43k|        Self {
+  451|  1.43k|            kind: TokenKind::LessThan,
+  452|  1.43k|            range,
+  453|  1.43k|        }
+  454|  1.43k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_pipe_pipeNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   386|    561|    pub fn new_pipe_pipe<R: Into<SourceRange<'a>>>(range: R) -> Self {
   387|    561|        let range = range.into();
@@ -1503,39 +1503,39 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_plus_plusNtNtCsgxSe
   310|    275|        }
   311|    275|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_semicolonNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  230|  1.99k|    pub fn new_semicolon<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  231|  1.99k|        let range = range.into();
+  230|  2.12k|    pub fn new_semicolon<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  231|  2.12k|        let range = range.into();
   232|       |
-  233|  1.99k|        debug_assert_eq!(range.source_text().unwrap_or(""), ";", "Expected ';'");
+  233|  2.12k|        debug_assert_eq!(range.source_text().unwrap_or(""), ";", "Expected ';'");
   234|       |
-  235|  1.99k|        Self {
-  236|  1.99k|            kind: TokenKind::Semicolon,
-  237|  1.99k|            range,
-  238|  1.99k|        }
-  239|  1.99k|    }
+  235|  2.12k|        Self {
+  236|  2.12k|            kind: TokenKind::Semicolon,
+  237|  2.12k|            range,
+  238|  2.12k|        }
+  239|  2.12k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token14new_identifierNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
-  161|  6.86k|    pub fn new_identifier<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  162|  6.86k|        let range = range.into();
+  161|  6.82k|    pub fn new_identifier<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  162|  6.82k|        let range = range.into();
   163|       |
-  164|  6.86k|        let source_text = range.source_text().unwrap_or("");
-  165|  6.86k|        assert!(!source_text.is_empty(), "Identifier cannot be empty");
+  164|  6.82k|        let source_text = range.source_text().unwrap_or("");
+  165|  6.82k|        assert!(!source_text.is_empty(), "Identifier cannot be empty");
   166|       |
-  167|  6.86k|        Self {
-  168|  6.86k|            kind: TokenKind::from_identifier(source_text),
-  169|  6.86k|            range,
-  170|  6.86k|        }
-  171|  6.86k|    }
+  167|  6.82k|        Self {
+  168|  6.82k|            kind: TokenKind::from_identifier(source_text),
+  169|  6.82k|            range,
+  170|  6.82k|        }
+  171|  6.82k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token14new_left_braceNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  206|    907|    pub fn new_left_brace<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  207|    907|        let range = range.into();
+  206|    909|    pub fn new_left_brace<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  207|    909|        let range = range.into();
   208|       |
-  209|    907|        debug_assert_eq!(range.source_text().unwrap_or(""), "{", "Expected '{{'");
+  209|    909|        debug_assert_eq!(range.source_text().unwrap_or(""), "{", "Expected '{{'");
   210|       |
-  211|    907|        Self {
-  212|    907|            kind: TokenKind::LeftBrace,
-  213|    907|            range,
-  214|    907|        }
-  215|    907|    }
+  211|    909|        Self {
+  212|    909|            kind: TokenKind::LeftBrace,
+  213|    909|            range,
+  214|    909|        }
+  215|    909|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token15new_bang_equalsNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   434|    521|    pub fn new_bang_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
   435|    521|        let range = range.into();
@@ -1610,16 +1610,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token19new_less_than_equalNtNt
   464|    460|        }
   465|    460|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token20new_left_parenthesisNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  182|  52.8k|    pub fn new_left_parenthesis<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  183|  52.8k|        let range = range.into();
+  182|  53.0k|    pub fn new_left_parenthesis<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  183|  53.0k|        let range = range.into();
   184|       |
-  185|  52.8k|        debug_assert_eq!(range.source_text().unwrap_or(""), "(", "Expected '('");
+  185|  53.0k|        debug_assert_eq!(range.source_text().unwrap_or(""), "(", "Expected '('");
   186|       |
-  187|  52.8k|        Self {
-  188|  52.8k|            kind: TokenKind::LeftParenthesis,
-  189|  52.8k|            range,
-  190|  52.8k|        }
-  191|  52.8k|    }
+  187|  53.0k|        Self {
+  188|  53.0k|            kind: TokenKind::LeftParenthesis,
+  189|  53.0k|            range,
+  190|  53.0k|        }
+  191|  53.0k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token21new_right_parenthesisNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   194|  1.06k|    pub fn new_right_parenthesis<R: Into<SourceRange<'a>>>(range: R) -> Self {
   195|  1.06k|        let range = range.into();
@@ -1654,16 +1654,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token23new_ampersand_ampersand
   358|    606|        }
   359|    606|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token23new_less_than_less_thanNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
-  467|    773|    pub fn new_less_than_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  468|    773|        let range = range.into();
+  467|    688|    pub fn new_less_than_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  468|    688|        let range = range.into();
   469|       |
-  470|    773|        debug_assert_eq!(range.source_text().unwrap_or(""), "<<", "Expected '<<'");
+  470|    688|        debug_assert_eq!(range.source_text().unwrap_or(""), "<<", "Expected '<<'");
   471|       |
-  472|    773|        Self {
-  473|    773|            kind: TokenKind::LessThanLessThan,
-  474|    773|            range,
-  475|    773|        }
-  476|    773|    }
+  472|    688|        Self {
+  473|    688|            kind: TokenKind::LessThanLessThan,
+  474|    688|            range,
+  475|    688|        }
+  476|    688|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token29new_greater_than_greater_thanNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   500|    523|    pub fn new_greater_than_greater_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
   501|    523|        let range = range.into();
@@ -1676,49 +1676,49 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token29new_greater_than_greate
   508|    523|        }
   509|    523|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token8new_bangNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  422|  7.94k|    pub fn new_bang<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  423|  7.94k|        let range = range.into();
+  422|  7.95k|    pub fn new_bang<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  423|  7.95k|        let range = range.into();
   424|       |
-  425|  7.94k|        debug_assert_eq!(range.source_text().unwrap_or(""), "!", "Expected '!'");
+  425|  7.95k|        debug_assert_eq!(range.source_text().unwrap_or(""), "!", "Expected '!'");
   426|       |
-  427|  7.94k|        Self {
-  428|  7.94k|            kind: TokenKind::Bang,
-  429|  7.94k|            range,
-  430|  7.94k|        }
-  431|  7.94k|    }
+  427|  7.95k|        Self {
+  428|  7.95k|            kind: TokenKind::Bang,
+  429|  7.95k|            range,
+  430|  7.95k|        }
+  431|  7.95k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token8new_pipeNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  374|  1.01k|    pub fn new_pipe<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  375|  1.01k|        let range = range.into();
+  374|    985|    pub fn new_pipe<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  375|    985|        let range = range.into();
   376|       |
-  377|  1.01k|        debug_assert_eq!(range.source_text().unwrap_or(""), "|", "Expected '|'");
+  377|    985|        debug_assert_eq!(range.source_text().unwrap_or(""), "|", "Expected '|'");
   378|       |
-  379|  1.01k|        Self {
-  380|  1.01k|            kind: TokenKind::Pipe,
-  381|  1.01k|            range,
-  382|  1.01k|        }
-  383|  1.01k|    }
+  379|    985|        Self {
+  380|    985|            kind: TokenKind::Pipe,
+  381|    985|            range,
+  382|    985|        }
+  383|    985|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token8new_plusNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  290|  2.04k|    pub fn new_plus<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  291|  2.04k|        let range = range.into();
+  290|  2.03k|    pub fn new_plus<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  291|  2.03k|        let range = range.into();
   292|       |
-  293|  2.04k|        debug_assert_eq!(range.source_text().unwrap_or(""), "+", "Expected '+'");
+  293|  2.03k|        debug_assert_eq!(range.source_text().unwrap_or(""), "+", "Expected '+'");
   294|       |
-  295|  2.04k|        Self {
-  296|  2.04k|            kind: TokenKind::Plus,
-  297|  2.04k|            range,
-  298|  2.04k|        }
-  299|  2.04k|    }
+  295|  2.03k|        Self {
+  296|  2.03k|            kind: TokenKind::Plus,
+  297|  2.03k|            range,
+  298|  2.03k|        }
+  299|  2.03k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token8new_starNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  314|  1.01k|    pub fn new_star<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  315|  1.01k|        let range = range.into();
+  314|  1.07k|    pub fn new_star<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  315|  1.07k|        let range = range.into();
   316|       |
-  317|  1.01k|        debug_assert_eq!(range.source_text().unwrap_or(""), "*", "Expected '*'");
+  317|  1.07k|        debug_assert_eq!(range.source_text().unwrap_or(""), "*", "Expected '*'");
   318|       |
-  319|  1.01k|        Self {
-  320|  1.01k|            kind: TokenKind::Star,
-  321|  1.01k|            range,
-  322|  1.01k|        }
-  323|  1.01k|    }
+  319|  1.07k|        Self {
+  320|  1.07k|            kind: TokenKind::Star,
+  321|  1.07k|            range,
+  322|  1.07k|        }
+  323|  1.07k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_caretNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   362|    800|    pub fn new_caret<R: Into<SourceRange<'a>>>(range: R) -> Self {
   363|    800|        let range = range.into();
@@ -1731,16 +1731,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_caretNtNtCsgxSeqfT5A
   370|    800|        }
   371|    800|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_minusNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  266|  1.54k|    pub fn new_minus<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  267|  1.54k|        let range = range.into();
+  266|  1.55k|    pub fn new_minus<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  267|  1.55k|        let range = range.into();
   268|       |
-  269|  1.54k|        debug_assert_eq!(range.source_text().unwrap_or(""), "-", "Expected '-'");
+  269|  1.55k|        debug_assert_eq!(range.source_text().unwrap_or(""), "-", "Expected '-'");
   270|       |
-  271|  1.54k|        Self {
-  272|  1.54k|            kind: TokenKind::Minus,
-  273|  1.54k|            range,
-  274|  1.54k|        }
-  275|  1.54k|    }
+  271|  1.55k|        Self {
+  272|  1.55k|            kind: TokenKind::Minus,
+  273|  1.55k|            range,
+  274|  1.55k|        }
+  275|  1.55k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_slashNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   242|    685|    pub fn new_slash<R: Into<SourceRange<'a>>>(range: R) -> Self {
   243|    685|        let range = range.into();
@@ -1765,10 +1765,10 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_tildeNtNtCsgxSeqfT5A
   263|  1.10k|    }
 
 _RNvNtCslFLQ9nFMP2y_11rustcc_llvm8analysis15verify_function:
-    5|  1.57k|pub fn verify_function(function: LLVMFunctionValue, action: LLVMVerifierFailureAction) -> bool {
+    5|  1.70k|pub fn verify_function(function: LLVMFunctionValue, action: LLVMVerifierFailureAction) -> bool {
     6|       |    // Safety: LLVMVerifyFunction is safe to call with valid parameters.
-    7|  1.57k|    unsafe { LLVMVerifyFunction(function.as_raw(), action) == 0 }
-    8|  1.57k|}
+    7|  1.70k|    unsafe { LLVMVerifyFunction(function.as_raw(), action) == 0 }
+    8|  1.70k|}
 
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm11basic_blockNtB2_14LLVMBasicBlock10get_parent:
    26|    477|    pub fn get_parent(&self) -> Option<LLVMFunctionValue> {
@@ -1782,18 +1782,18 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm11basic_blockNtB2_14LLVMBasicBlock10get_parent
    34|       |        }
    35|    477|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm11basic_blockNtB2_14LLVMBasicBlock6as_raw:
-   20|  8.73k|    pub(crate) fn as_raw(&self) -> LLVMBasicBlockRef {
-   21|  8.73k|        assert!(!self.0.is_null(), "LLVMBasicBlock contains null pointer");
-   22|  8.73k|        self.0
-   23|  8.73k|    }
+   20|  8.85k|    pub(crate) fn as_raw(&self) -> LLVMBasicBlockRef {
+   21|  8.85k|        assert!(!self.0.is_null(), "LLVMBasicBlock contains null pointer");
+   22|  8.85k|        self.0
+   23|  8.85k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm11basic_blockNtB2_14LLVMBasicBlock8from_raw:
-   11|  3.96k|    pub(crate) fn from_raw(raw: LLVMBasicBlockRef) -> Self {
-   12|  3.96k|        assert!(
-   13|  3.96k|            !raw.is_null(),
+   11|  4.08k|    pub(crate) fn from_raw(raw: LLVMBasicBlockRef) -> Self {
+   12|  4.08k|        assert!(
+   13|  4.08k|            !raw.is_null(),
    14|      0|            "Attempted to create LLVMBasicBlock from null pointer"
    15|       |        );
-   16|  3.96k|        Self(raw)
-   17|  3.96k|    }
+   16|  4.08k|        Self(raw)
+   17|  4.08k|    }
 
 _RINvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB3_11LLVMBuilder3phiReECshCskfrbP79Y_14rustcc_codegen:
   322|    477|    pub fn phi<'a, S: Into<&'a str>>(&self, typ: LLVMType, name: S) -> LLVMPhi {
@@ -1872,10 +1872,10 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder15integer_compare:
   204|       |        })
   205|  5.90k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder15position_at_end:
-   37|  3.48k|    pub fn position_at_end(&self, basic_block: LLVMBasicBlock) {
+   37|  3.61k|    pub fn position_at_end(&self, basic_block: LLVMBasicBlock) {
    38|       |        // Safety: LLVMPositionBuilderAtEnd is safe to call with valid parameters.
-   39|  3.48k|        unsafe { LLVMPositionBuilderAtEnd(self.0, basic_block.as_raw()) };
-   40|  3.48k|    }
+   39|  3.61k|        unsafe { LLVMPositionBuilderAtEnd(self.0, basic_block.as_raw()) };
+   40|  3.61k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder16get_insert_block:
    43|    477|    pub fn get_insert_block(&self) -> Option<LLVMBasicBlock> {
    44|       |        // Safety: LLVMGetInsertBlock is safe to call with a valid LLVMBuilderRef.
@@ -1906,13 +1906,13 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder18bitwise_complement
   188|    317|        LLVMValue::from_raw(unsafe { LLVMBuildNot(self.0, value.as_raw(), name.as_ptr()) })
   189|    317|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder18bitwise_left_shift:
-  140|    322|    pub fn bitwise_left_shift(&self, left: LLVMValue, right: LLVMValue) -> LLVMValue {
-  141|    322|        let name = to_cstring("shl");
+  140|    194|    pub fn bitwise_left_shift(&self, left: LLVMValue, right: LLVMValue) -> LLVMValue {
+  141|    194|        let name = to_cstring("shl");
   142|       |        // Safety: LLVMBuildShl is safe to call with valid parameters.
-  143|    322|        LLVMValue::from_raw(unsafe {
-  144|    322|            LLVMBuildShl(self.0, left.as_raw(), right.as_raw(), name.as_ptr())
+  143|    194|        LLVMValue::from_raw(unsafe {
+  144|    194|            LLVMBuildShl(self.0, left.as_raw(), right.as_raw(), name.as_ptr())
   145|       |        })
-  146|    322|    }
+  146|    194|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder18conditional_branch:
   298|    954|    pub fn conditional_branch(
   299|    954|        &self,
@@ -1976,10 +1976,10 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder3add:
    71|       |        })
    72|    198|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder3ret:
-   53|  1.57k|    pub fn ret(&self, value: LLVMValue) {
+   53|  1.70k|    pub fn ret(&self, value: LLVMValue) {
    54|       |        // Safety: LLVMBuildRet is safe to call with valid parameters.
-   55|  1.57k|        unsafe { LLVMBuildRet(self.0, value.as_raw()) };
-   56|  1.57k|    }
+   55|  1.70k|        unsafe { LLVMBuildRet(self.0, value.as_raw()) };
+   56|  1.70k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7builderNtB2_11LLVMBuilder6negate:
    59|    261|    pub fn negate(&self, value: LLVMValue) -> LLVMValue {
    60|    261|        let name = to_cstring("neg");
@@ -2015,27 +2015,27 @@ _RINvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB3_11LLVMContext18create_basic_bloc
    92|  1.90k|        LLVMBasicBlock::from_raw(unsafe { LLVMCreateBasicBlockInContext(self.0, name.as_ptr()) })
    93|  1.90k|    }
 _RINvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB3_11LLVMContext31create_basic_block_for_functionReECshCskfrbP79Y_14rustcc_codegen:
-   77|  1.57k|    pub fn create_basic_block_for_function<'a, S: Into<&'a str>>(
-   78|  1.57k|        &self,
-   79|  1.57k|        function: &LLVMFunctionValue,
-   80|  1.57k|        name: S,
-   81|  1.57k|    ) -> LLVMBasicBlock {
-   82|  1.57k|        let name = to_cstring(name.into());
+   77|  1.70k|    pub fn create_basic_block_for_function<'a, S: Into<&'a str>>(
+   78|  1.70k|        &self,
+   79|  1.70k|        function: &LLVMFunctionValue,
+   80|  1.70k|        name: S,
+   81|  1.70k|    ) -> LLVMBasicBlock {
+   82|  1.70k|        let name = to_cstring(name.into());
    83|       |        // Safety: LLVMAppendBasicBlockInContext is safe to call with valid parameters.
-   84|  1.57k|        LLVMBasicBlock::from_raw(unsafe {
-   85|  1.57k|            LLVMAppendBasicBlockInContext(self.0, function.as_raw(), name.as_ptr())
+   84|  1.70k|        LLVMBasicBlock::from_raw(unsafe {
+   85|  1.70k|            LLVMAppendBasicBlockInContext(self.0, function.as_raw(), name.as_ptr())
    86|       |        })
-   87|  1.57k|    }
+   87|  1.70k|    }
 _RNvXs_NtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB4_11LLVMContextNtNtNtCs6SNw0SRvItZ_4core3ops4drop4Drop4drop:
    97|      1|    fn drop(&mut self) {
    98|       |        // Safety: LLVMContextDispose is safe to call with a valid LLVMContextRef.
    99|      1|        unsafe { LLVMContextDispose(self.0) };
   100|      1|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB2_11LLVMContext10int32_type:
-   55|  17.5k|    pub fn int32_type(&self) -> LLVMType {
+   55|  17.6k|    pub fn int32_type(&self) -> LLVMType {
    56|       |        // Safety: LLVMInt32TypeInContext is safe to call with a valid LLVMContextRef.
-   57|  17.5k|        LLVMType::from_raw(unsafe { LLVMInt32TypeInContext(self.0) })
-   58|  17.5k|    }
+   57|  17.6k|        LLVMType::from_raw(unsafe { LLVMInt32TypeInContext(self.0) })
+   58|  17.6k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB2_11LLVMContext3new:
    20|      1|    pub fn new() -> Option<Self> {
    21|       |        // Safety: LLVMContextCreate is safe to call and returns a valid LLVMContextRef
@@ -2048,74 +2048,74 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB2_11LLVMContext3new:
    28|       |        }
    29|      1|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm7contextNtB2_11LLVMContext6as_raw:
-   31|  1.32k|    pub(crate) fn as_raw(&self) -> LLVMContextRef {
-   32|  1.32k|        assert!(!self.0.is_null(), "LLVMContext contains null pointer");
-   33|  1.32k|        self.0
-   34|  1.32k|    }
+   31|  1.31k|    pub(crate) fn as_raw(&self) -> LLVMContextRef {
+   32|  1.31k|        assert!(!self.0.is_null(), "LLVMContext contains null pointer");
+   33|  1.31k|        self.0
+   34|  1.31k|    }
 
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm8functionNtB2_16LLVMFunctionType6as_raw:
-   21|  1.57k|    pub(crate) fn as_raw(&self) -> LLVMTypeRef {
-   22|  1.57k|        self.0.as_raw()
-   23|  1.57k|    }
+   21|  1.70k|    pub(crate) fn as_raw(&self) -> LLVMTypeRef {
+   22|  1.70k|        self.0.as_raw()
+   23|  1.70k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm8functionNtB2_16LLVMFunctionType8from_raw:
-   16|  1.57k|    pub(crate) fn from_raw(raw: LLVMTypeRef) -> Self {
-   17|  1.57k|        Self(LLVMType::from_raw(raw))
-   18|  1.57k|    }
+   16|  1.70k|    pub(crate) fn from_raw(raw: LLVMTypeRef) -> Self {
+   17|  1.70k|        Self(LLVMType::from_raw(raw))
+   18|  1.70k|    }
 _RNvMs_NtCslFLQ9nFMP2y_11rustcc_llvm8functionNtB4_17LLVMFunctionValue27append_existing_basic_block:
    46|  1.90k|    pub fn append_existing_basic_block(&self, basic_block: LLVMBasicBlock) {
    47|       |        // Safety: LLVMAppendExistingBasicBlock is safe to call with valid parameters.
    48|  1.90k|        unsafe { LLVMAppendExistingBasicBlock(self.as_raw(), basic_block.as_raw()) };
    49|  1.90k|    }
 _RNvMs_NtCslFLQ9nFMP2y_11rustcc_llvm8functionNtB4_17LLVMFunctionValue6as_raw:
-   42|  5.06k|    pub(crate) fn as_raw(&self) -> LLVMValueRef {
-   43|  5.06k|        self.0.as_raw()
-   44|  5.06k|    }
+   42|  5.31k|    pub(crate) fn as_raw(&self) -> LLVMValueRef {
+   43|  5.31k|        self.0.as_raw()
+   44|  5.31k|    }
 _RNvMs_NtCslFLQ9nFMP2y_11rustcc_llvm8functionNtB4_17LLVMFunctionValue8from_raw:
-   37|  2.05k|    pub(crate) fn from_raw(raw: LLVMValueRef) -> Self {
-   38|  2.05k|        Self(LLVMValue::from_raw(raw))
-   39|  2.05k|    }
+   37|  2.18k|    pub(crate) fn from_raw(raw: LLVMValueRef) -> Self {
+   38|  2.18k|        Self(LLVMValue::from_raw(raw))
+   39|  2.18k|    }
 _RNvNtCslFLQ9nFMP2y_11rustcc_llvm8function13function_type:
-   58|  1.57k|pub fn function_type(return_type: LLVMType) -> LLVMFunctionType {
+   58|  1.70k|pub fn function_type(return_type: LLVMType) -> LLVMFunctionType {
    59|       |    // SAFETY: The caller must ensure that `return_type` is a valid LLVM type.
-   60|  1.57k|    LLVMFunctionType::from_raw(unsafe {
-   61|  1.57k|        crate::ffi::LLVMFunctionType(return_type.as_raw(), ptr::null_mut(), 0, 0)
+   60|  1.70k|    LLVMFunctionType::from_raw(unsafe {
+   61|  1.70k|        crate::ffi::LLVMFunctionType(return_type.as_raw(), ptr::null_mut(), 0, 0)
    62|       |    })
-   63|  1.57k|}
+   63|  1.70k|}
 
 _RINvCslFLQ9nFMP2y_11rustcc_llvm10to_cstringReEB2_:
-   24|  20.4k|fn to_cstring<'a, S: Into<&'a str>>(string: S) -> std::ffi::CString {
-   25|  20.4k|    std::ffi::CString::new(string.into()).expect("Invalid string")
-   26|  20.4k|}
+   24|  20.5k|fn to_cstring<'a, S: Into<&'a str>>(string: S) -> std::ffi::CString {
+   25|  20.5k|    std::ffi::CString::new(string.into()).expect("Invalid string")
+   26|  20.5k|}
 
 _RINvMNtCslFLQ9nFMP2y_11rustcc_llvm6moduleNtB3_10LLVMModule12add_functionReECshCskfrbP79Y_14rustcc_codegen:
-   29|  1.57k|    pub fn add_function<'a, S: Into<&'a str>>(
-   30|  1.57k|        &self,
-   31|  1.57k|        name: S,
-   32|  1.57k|        function_type: LLVMFunctionType,
-   33|  1.57k|    ) -> LLVMFunctionValue {
-   34|  1.57k|        let name = to_cstring(name.into());
+   29|  1.70k|    pub fn add_function<'a, S: Into<&'a str>>(
+   30|  1.70k|        &self,
+   31|  1.70k|        name: S,
+   32|  1.70k|        function_type: LLVMFunctionType,
+   33|  1.70k|    ) -> LLVMFunctionValue {
+   34|  1.70k|        let name = to_cstring(name.into());
    35|       |        // Safety: LLVMAddFunction is safe to call with valid parameters.
-   36|  1.57k|        LLVMFunctionValue::from_raw(unsafe {
-   37|  1.57k|            LLVMAddFunction(self.0, name.as_ptr(), function_type.as_raw())
+   36|  1.70k|        LLVMFunctionValue::from_raw(unsafe {
+   37|  1.70k|            LLVMAddFunction(self.0, name.as_ptr(), function_type.as_raw())
    38|       |        })
-   39|  1.57k|    }
+   39|  1.70k|    }
 _RINvMNtCslFLQ9nFMP2y_11rustcc_llvm6moduleNtB3_10LLVMModule14new_in_contextReECshCskfrbP79Y_14rustcc_codegen:
-   16|  1.32k|    pub fn new_in_context<'a, S: Into<&'a str>>(name: S, context: &LLVMContext) -> Option<Self> {
-   17|  1.32k|        let name = to_cstring(name.into());
+   16|  1.31k|    pub fn new_in_context<'a, S: Into<&'a str>>(name: S, context: &LLVMContext) -> Option<Self> {
+   17|  1.31k|        let name = to_cstring(name.into());
    18|       |        // Safety: LLVMModuleCreateWithNameInContext is safe to call with valid
    19|       |        // parameters.
-   20|  1.32k|        let module = unsafe { LLVMModuleCreateWithNameInContext(name.as_ptr(), context.as_raw()) };
-   21|  1.32k|        if module.is_null() {
+   20|  1.31k|        let module = unsafe { LLVMModuleCreateWithNameInContext(name.as_ptr(), context.as_raw()) };
+   21|  1.31k|        if module.is_null() {
    22|      0|            None
    23|       |        } else {
-   24|  1.32k|            Some(Self(module))
+   24|  1.31k|            Some(Self(module))
    25|       |        }
-   26|  1.32k|    }
+   26|  1.31k|    }
 _RNvXs_NtCslFLQ9nFMP2y_11rustcc_llvm6moduleNtB4_10LLVMModuleNtNtNtCs6SNw0SRvItZ_4core3ops4drop4Drop4drop:
-   48|  1.32k|    fn drop(&mut self) {
+   48|  1.31k|    fn drop(&mut self) {
    49|       |        // Safety: LLVMDisposeModule is safe to call with a valid LLVMModuleRef.
-   50|  1.32k|        unsafe { LLVMDisposeModule(self.0) };
-   51|  1.32k|    }
+   50|  1.31k|        unsafe { LLVMDisposeModule(self.0) };
+   51|  1.31k|    }
 
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm3phiNtB2_7LLVMPhi12add_incoming:
    23|    477|    pub fn add_incoming(&self, values: &[LLVMValue], blocks: &[LLVMBasicBlock]) {
@@ -2156,24 +2156,24 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm3typNtB2_8LLVMType16constant_integer:
    30|       |        })
    31|  10.5k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm3typNtB2_8LLVMType6as_raw:
-   19|  19.1k|    pub(crate) fn as_raw(&self) -> LLVMTypeRef {
-   20|  19.1k|        assert!(!self.0.is_null(), "LLVMType contains null pointer");
-   21|  19.1k|        self.0
-   22|  19.1k|    }
+   19|  19.3k|    pub(crate) fn as_raw(&self) -> LLVMTypeRef {
+   20|  19.3k|        assert!(!self.0.is_null(), "LLVMType contains null pointer");
+   21|  19.3k|        self.0
+   22|  19.3k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm3typNtB2_8LLVMType8from_raw:
-   11|  19.1k|    pub(crate) fn from_raw(raw: LLVMTypeRef) -> Self {
-   12|  19.1k|        assert!(
-   13|  19.1k|            !raw.is_null(),
+   11|  19.3k|    pub(crate) fn from_raw(raw: LLVMTypeRef) -> Self {
+   12|  19.3k|        assert!(
+   13|  19.3k|            !raw.is_null(),
    14|      0|            "Attempted to create LLVMType from null pointer"
    15|       |        );
-   16|  19.1k|        Self(raw)
-   17|  19.1k|    }
+   16|  19.3k|        Self(raw)
+   17|  19.3k|    }
 
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm5valueNtB2_9LLVMValue6as_raw:
-   16|  29.6k|    pub(crate) fn as_raw(&self) -> LLVMValueRef {
-   17|  29.6k|        assert!(!self.0.is_null(), "LLVMValue contains null pointer");
-   18|  29.6k|        self.0
-   19|  29.6k|    }
+   16|  29.7k|    pub(crate) fn as_raw(&self) -> LLVMValueRef {
+   17|  29.7k|        assert!(!self.0.is_null(), "LLVMValue contains null pointer");
+   18|  29.7k|        self.0
+   19|  29.7k|    }
 _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm5valueNtB2_9LLVMValue8from_raw:
     8|  28.5k|    pub(crate) fn from_raw(raw: LLVMValueRef) -> Self {
     9|  28.5k|        assert!(
@@ -2184,9 +2184,9 @@ _RNvMNtCslFLQ9nFMP2y_11rustcc_llvm5valueNtB2_9LLVMValue8from_raw:
    14|  28.5k|    }
 
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser11is_finished:
-   46|  22.5k|    fn is_finished(&self) -> bool {
-   47|  22.5k|        *self.index.borrow() >= self.tokens.len()
-   48|  22.5k|    }
+   46|  22.4k|    fn is_finished(&self) -> bool {
+   47|  22.4k|        *self.index.borrow() >= self.tokens.len()
+   48|  22.4k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12consume_next:
    64|  39.1k|    fn consume_next(&self) -> Option<&Token<'a>> {
    65|  39.1k|        let token = self.peek_next();
@@ -2194,21 +2194,21 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12consume_next:
    67|  39.1k|        token
    68|  39.1k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12parse_factor:
-  259|  69.1k|    fn parse_factor(&'_ self) -> Option<Expression<'_>> {
-  260|  69.1k|        let Some(token) = self.peek_next() else {
-  261|    196|            self.diagnostic(
-  262|    196|                DiagnosticId::ExpectedExpression,
-  263|    196|                self.current_token_source_range(),
+  259|  69.4k|    fn parse_factor(&'_ self) -> Option<Expression<'_>> {
+  260|  69.4k|        let Some(token) = self.peek_next() else {
+  261|    197|            self.diagnostic(
+  262|    197|                DiagnosticId::ExpectedExpression,
+  263|    197|                self.current_token_source_range(),
   264|       |                "expected expression but reached end of file",
   265|       |            );
-  266|    196|            return None;
+  266|    197|            return None;
   267|       |        };
   268|       |
   269|       |        #[expect(clippy::wildcard_enum_match_arm)]
-  270|  51.0k|        match &token.kind {
-  271|  10.1k|            TokenKind::IntegerLiteral(_) => self.parse_integer_literal(),
-  272|  58.7k|            x if x.is_unary_operator() => self.parse_unary_expression(),
-  273|  50.8k|            TokenKind::LeftParenthesis => self.parse_parenthesis_expression(),
+  270|  51.2k|        match &token.kind {
+  271|  10.3k|            TokenKind::IntegerLiteral(_) => self.parse_integer_literal(),
+  272|  58.9k|            x if x.is_unary_operator() => self.parse_unary_expression(),
+  273|  51.0k|            TokenKind::LeftParenthesis => self.parse_parenthesis_expression(),
   274|       |
   275|       |            _ => {
   276|    239|                self.diagnostic(
@@ -2219,24 +2219,24 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12parse_factor:
   281|    239|                None
   282|       |            }
   283|       |        }
-  284|  69.1k|    }
+  284|  69.4k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser15parse_statement:
-  179|  21.2k|    fn parse_statement(&'_ self) -> Option<Statement<'_>> {
+  179|  21.1k|    fn parse_statement(&'_ self) -> Option<Statement<'_>> {
   180|       |        // TODO: Statement can be all sorts of things, for now we only allow the
   181|       |        // return statement
-  182|  21.2k|        self.parse_return_statement()
-  183|  21.2k|    }
+  182|  21.1k|        self.parse_return_statement()
+  183|  21.1k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser16parse_expression:
-  227|  61.4k|    fn parse_expression(&'_ self, minimum_precedence: u8) -> Option<Expression<'_>> {
-  228|  61.4k|        let mut left = self.parse_factor()?;
+  227|  61.7k|    fn parse_expression(&'_ self, minimum_precedence: u8) -> Option<Expression<'_>> {
+  228|  61.7k|        let mut left = self.parse_factor()?;
   229|       |
-  230|  19.7k|        while let Some(token) = self.peek_next() {
-  231|  18.5k|            if let Some(operator) = token.binary_operator()
-  232|  13.5k|                && operator.precedence() >= minimum_precedence
+  230|  19.9k|        while let Some(token) = self.peek_next() {
+  231|  18.8k|            if let Some(operator) = token.binary_operator()
+  232|  13.7k|                && operator.precedence() >= minimum_precedence
   233|       |            {
-  234|  7.65k|                self.consume();
+  234|  7.78k|                self.consume();
   235|       |
-  236|  7.65k|                let right = self.parse_expression(operator.precedence() + 1)?;
+  236|  7.78k|                let right = self.parse_expression(operator.precedence() + 1)?;
   237|       |
   238|  6.80k|                let range = SourceRange {
   239|  6.80k|                    begin: left.range.begin,
@@ -2252,17 +2252,17 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser16parse_expression:
   249|  6.80k|                    range,
   250|  6.80k|                };
   251|       |            } else {
-  252|  10.9k|                break;
+  252|  11.0k|                break;
   253|       |            }
   254|       |        }
   255|       |
-  256|  12.0k|        Some(left)
-  257|  61.4k|    }
+  256|  12.1k|        Some(left)
+  257|  61.7k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser21parse_integer_literal:
-  286|  10.1k|    fn parse_integer_literal(&'_ self) -> Option<Expression<'_>> {
-  287|  10.1k|        let token = self.consume_next()?;
+  286|  10.3k|    fn parse_integer_literal(&'_ self) -> Option<Expression<'_>> {
+  287|  10.3k|        let token = self.consume_next()?;
   288|       |
-  289|  10.1k|        let TokenKind::IntegerLiteral(value) = token.kind else {
+  289|  10.3k|        let TokenKind::IntegerLiteral(value) = token.kind else {
   290|      0|            self.diagnostic(
   291|      0|                DiagnosticId::ExpectedIntegerLiteral,
   292|      0|                token.range,
@@ -2271,51 +2271,51 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser21parse_integer_literal:
   295|      0|            return None;
   296|       |        };
   297|       |
-  298|  10.1k|        Some(Expression {
-  299|  10.1k|            kind: ExpressionKind::IntegerLiteral(value),
-  300|  10.1k|            range: token.range,
-  301|  10.1k|        })
-  302|  10.1k|    }
+  298|  10.3k|        Some(Expression {
+  299|  10.3k|            kind: ExpressionKind::IntegerLiteral(value),
+  300|  10.3k|            range: token.range,
+  301|  10.3k|        })
+  302|  10.3k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser22parse_return_statement:
-  185|  21.2k|    fn parse_return_statement(&'_ self) -> Option<Statement<'_>> {
+  185|  21.1k|    fn parse_return_statement(&'_ self) -> Option<Statement<'_>> {
   186|       |        // Require the 'return' keyword
-  187|  21.2k|        let Some(return_token) = self.expect(&TokenKind::KeywordReturn) else {
-  188|  18.2k|            self.diagnostic(
-  189|  18.2k|                DiagnosticId::ExpectedReturnKeyword,
-  190|  18.2k|                self.current_token_source_range(),
+  187|  21.1k|        let Some(return_token) = self.expect(&TokenKind::KeywordReturn) else {
+  188|  18.1k|            self.diagnostic(
+  189|  18.1k|                DiagnosticId::ExpectedReturnKeyword,
+  190|  18.1k|                self.current_token_source_range(),
   191|       |                "expected 'return' keyword",
   192|       |            );
-  193|  18.2k|            return None;
+  193|  18.1k|            return None;
   194|       |        };
   195|       |
   196|       |        // Parse the expression
   197|  2.97k|        let Some(expression) = self.parse_expression(0) else {
-  198|    435|            self.diagnostic(
-  199|    435|                DiagnosticId::ExpectedExpression,
-  200|    435|                return_token.range.end,
+  198|    436|            self.diagnostic(
+  199|    436|                DiagnosticId::ExpectedExpression,
+  200|    436|                return_token.range.end,
   201|       |                "expected expression instead reached end of file",
   202|       |            );
-  203|    435|            return None;
+  203|    436|            return None;
   204|       |        };
   205|       |
   206|       |        // Require a semicolon
   207|  2.53k|        let Some(semicolon_token) = self.expect(&TokenKind::Semicolon) else {
-  208|    958|            self.diagnostic(
-  209|    958|                DiagnosticId::ExpectedSemicolon,
-  210|    958|                self.current_token_source_range(),
+  208|    830|            self.diagnostic(
+  209|    830|                DiagnosticId::ExpectedSemicolon,
+  210|    830|                self.current_token_source_range(),
   211|       |                "expected ';'",
   212|       |            );
-  213|    958|            return None;
+  213|    830|            return None;
   214|       |        };
   215|       |
-  216|  1.57k|        Some(Statement::new_return(
-  217|  1.57k|            expression,
-  218|  1.57k|            SourceRange {
-  219|  1.57k|                begin: return_token.range.begin,
-  220|  1.57k|                end: semicolon_token.range.end,
-  221|  1.57k|            },
-  222|  1.57k|        ))
-  223|  21.2k|    }
+  216|  1.70k|        Some(Statement::new_return(
+  217|  1.70k|            expression,
+  218|  1.70k|            SourceRange {
+  219|  1.70k|                begin: return_token.range.begin,
+  220|  1.70k|                end: semicolon_token.range.end,
+  221|  1.70k|            },
+  222|  1.70k|        ))
+  223|  21.1k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser22parse_unary_expression:
   304|  7.69k|    fn parse_unary_expression(&'_ self) -> Option<Expression<'_>> {
   305|  7.69k|        let operator_token = self.consume_next()?;
@@ -2337,19 +2337,19 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser22parse_unary_expression:
   321|  7.12k|        })
   322|  7.69k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser25parse_function_definition:
-   93|  21.2k|    fn parse_function_definition(&'_ self) -> Option<FunctionDefinition<'_>> {
+   93|  21.1k|    fn parse_function_definition(&'_ self) -> Option<FunctionDefinition<'_>> {
    94|       |        // First parse the function return type.
    95|       |        // TODO: For now we only support 'int' return type.
-   96|  21.2k|        if self.expect(&TokenKind::KeywordInt).is_none() {
-   97|  21.0k|            self.diagnostic(
-   98|  21.0k|                DiagnosticId::ExpectedFunctionReturnType,
-   99|  21.0k|                self.current_token_source_range(),
-  100|  21.0k|                "expected 'int' keyword",
-  101|  21.0k|            );
-  102|  21.0k|        }
+   96|  21.1k|        if self.expect(&TokenKind::KeywordInt).is_none() {
+   97|  20.9k|            self.diagnostic(
+   98|  20.9k|                DiagnosticId::ExpectedFunctionReturnType,
+   99|  20.9k|                self.current_token_source_range(),
+  100|  20.9k|                "expected 'int' keyword",
+  101|  20.9k|            );
+  102|  20.9k|        }
   103|       |
   104|       |        // Parse the function name
-  105|  21.2k|        let Some(name_token) = self.consume_next() else {
+  105|  21.1k|        let Some(name_token) = self.consume_next() else {
   106|      9|            self.diagnostic(
   107|      9|                DiagnosticId::ExpectedFunctionName,
   108|      9|                self.current_token_source_range(),
@@ -2358,21 +2358,21 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser25parse_function_definition:
   111|      9|            return None;
   112|       |        };
   113|       |
-  114|  21.2k|        let name = name_token
-  115|  21.2k|            .range
-  116|  21.2k|            .source_text()
-  117|  21.2k|            .map(std::string::ToString::to_string)
-  118|  21.2k|            .unwrap_or_default();
-  119|  21.2k|        if !name_token.is_identifier() || name.is_empty() {
-  120|  17.6k|            self.diagnostic(
-  121|  17.6k|                DiagnosticId::ExpectedFunctionName,
-  122|  17.6k|                self.current_token_source_range(),
-  123|  17.6k|                "expected function name",
-  124|  17.6k|            );
-  125|  17.6k|        }
+  114|  21.1k|        let name = name_token
+  115|  21.1k|            .range
+  116|  21.1k|            .source_text()
+  117|  21.1k|            .map(std::string::ToString::to_string)
+  118|  21.1k|            .unwrap_or_default();
+  119|  21.1k|        if !name_token.is_identifier() || name.is_empty() {
+  120|  17.7k|            self.diagnostic(
+  121|  17.7k|                DiagnosticId::ExpectedFunctionName,
+  122|  17.7k|                self.current_token_source_range(),
+  123|  17.7k|                "expected function name",
+  124|  17.7k|            );
+  125|  17.7k|        }
   126|       |
   127|       |        // Require an open parenthesis
-  128|  21.2k|        if self.expect(&TokenKind::LeftParenthesis).is_none() {
+  128|  21.1k|        if self.expect(&TokenKind::LeftParenthesis).is_none() {
   129|  20.1k|            self.diagnostic(
   130|  20.1k|                DiagnosticId::ExpectedLeftParenthesis,
   131|  20.1k|                self.current_token_source_range(),
@@ -2382,16 +2382,16 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser25parse_function_definition:
   135|       |
   136|       |        // TODO: Now we would parse the function parameters, but for now just
   137|       |        // skip them We currently require a void parameter
-  138|  21.2k|        if self.expect(&TokenKind::KeywordVoid).is_none() {
-  139|  21.0k|            self.diagnostic(
-  140|  21.0k|                DiagnosticId::ExpectedVoidInParameterList,
-  141|  21.0k|                self.current_token_source_range(),
-  142|  21.0k|                "expected 'void' keyword for parameter list",
-  143|  21.0k|            );
-  144|  21.0k|        }
+  138|  21.1k|        if self.expect(&TokenKind::KeywordVoid).is_none() {
+  139|  20.9k|            self.diagnostic(
+  140|  20.9k|                DiagnosticId::ExpectedVoidInParameterList,
+  141|  20.9k|                self.current_token_source_range(),
+  142|  20.9k|                "expected 'void' keyword for parameter list",
+  143|  20.9k|            );
+  144|  20.9k|        }
   145|       |
   146|       |        // Require a closing parenthesis
-  147|  21.2k|        if self.expect(&TokenKind::RightParenthesis).is_none() {
+  147|  21.1k|        if self.expect(&TokenKind::RightParenthesis).is_none() {
   148|  20.7k|            self.diagnostic(
   149|  20.7k|                DiagnosticId::ExpectedRightParenthesis,
   150|  20.7k|                self.current_token_source_range(),
@@ -2400,28 +2400,28 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser25parse_function_definition:
   153|  20.7k|        }
   154|       |
   155|       |        // Require an open brace
-  156|  21.2k|        if self.expect(&TokenKind::LeftBrace).is_none() {
-  157|  20.7k|            self.diagnostic(
-  158|  20.7k|                DiagnosticId::ExpectedLeftBrace,
-  159|  20.7k|                self.current_token_source_range(),
-  160|  20.7k|                "expected '{'",
-  161|  20.7k|            );
-  162|  20.7k|        }
+  156|  21.1k|        if self.expect(&TokenKind::LeftBrace).is_none() {
+  157|  20.6k|            self.diagnostic(
+  158|  20.6k|                DiagnosticId::ExpectedLeftBrace,
+  159|  20.6k|                self.current_token_source_range(),
+  160|  20.6k|                "expected '{'",
+  161|  20.6k|            );
+  162|  20.6k|        }
   163|       |
   164|       |        // Parse the function body
-  165|  21.2k|        let body = self.parse_statement()?;
+  165|  21.1k|        let body = self.parse_statement()?;
   166|       |
   167|       |        // Require a closing brace
-  168|  1.57k|        if self.expect(&TokenKind::RightBrace).is_none() {
-  169|  1.38k|            self.diagnostic(
-  170|  1.38k|                DiagnosticId::ExpectedRightBrace,
-  171|  1.38k|                self.current_token_source_range(),
-  172|  1.38k|                "expected '}'",
-  173|  1.38k|            );
-  174|  1.38k|        }
+  168|  1.70k|        if self.expect(&TokenKind::RightBrace).is_none() {
+  169|  1.51k|            self.diagnostic(
+  170|  1.51k|                DiagnosticId::ExpectedRightBrace,
+  171|  1.51k|                self.current_token_source_range(),
+  172|  1.51k|                "expected '}'",
+  173|  1.51k|            );
+  174|  1.51k|        }
   175|       |
-  176|  1.57k|        Some(FunctionDefinition { name, body })
-  177|  21.2k|    }
+  176|  1.70k|        Some(FunctionDefinition { name, body })
+  177|  21.1k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser26current_token_source_range:
    50|   144k|    fn current_token_source_range(&self) -> SourceRange<'a> {
    51|   144k|        self.peek_next()
@@ -2429,32 +2429,32 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser26current_token_source_range:
    53|   144k|            .unwrap_or_default()
    54|   144k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser28parse_parenthesis_expression:
-  324|  50.8k|    fn parse_parenthesis_expression(&'_ self) -> Option<Expression<'_>> {
+  324|  51.0k|    fn parse_parenthesis_expression(&'_ self) -> Option<Expression<'_>> {
   325|       |        // Opening parenthesis
-  326|  50.8k|        let opnening_parenthesis_token = self.expect(&TokenKind::LeftParenthesis)?;
+  326|  51.0k|        let opnening_parenthesis_token = self.expect(&TokenKind::LeftParenthesis)?;
   327|       |
-  328|  50.8k|        let expression = self.parse_expression(0)?;
+  328|  51.0k|        let expression = self.parse_expression(0)?;
   329|       |
   330|       |        // Closing parenthesis
-  331|  2.71k|        let closing_paren_token = self.expect(&TokenKind::RightParenthesis);
-  332|  2.71k|        if closing_paren_token.is_none() {
-  333|  2.46k|            self.diagnostic(
-  334|  2.46k|                DiagnosticId::MissingClosingParenthesis,
-  335|  2.46k|                self.current_token_source_range(),
-  336|  2.46k|                "missing closing right parenthesis ')'",
-  337|  2.46k|            );
-  338|  2.46k|        }
+  331|  2.84k|        let closing_paren_token = self.expect(&TokenKind::RightParenthesis);
+  332|  2.84k|        if closing_paren_token.is_none() {
+  333|  2.59k|            self.diagnostic(
+  334|  2.59k|                DiagnosticId::MissingClosingParenthesis,
+  335|  2.59k|                self.current_token_source_range(),
+  336|  2.59k|                "missing closing right parenthesis ')'",
+  337|  2.59k|            );
+  338|  2.59k|        }
   339|       |
-  340|  2.71k|        let range = SourceRange {
-  341|  2.71k|            begin: opnening_parenthesis_token.range.begin,
-  342|  2.71k|            end: closing_paren_token.map_or(expression.range.end, |token| token.range.end),
+  340|  2.84k|        let range = SourceRange {
+  341|  2.84k|            begin: opnening_parenthesis_token.range.begin,
+  342|  2.84k|            end: closing_paren_token.map_or(expression.range.end, |token| token.range.end),
   343|       |        };
   344|       |
-  345|  2.71k|        Some(Expression {
-  346|  2.71k|            kind: ExpressionKind::Parenthesis(Box::new(expression)),
-  347|  2.71k|            range,
-  348|  2.71k|        })
-  349|  50.8k|    }
+  345|  2.84k|        Some(Expression {
+  346|  2.84k|            kind: ExpressionKind::Parenthesis(Box::new(expression)),
+  347|  2.84k|            range,
+  348|  2.84k|        })
+  349|  51.0k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser3new:
    27|  1.31k|    pub fn new(diagnostic_engine: Rc<RefCell<DiagnosticEngine>>, tokens: TokenList<'a>) -> Self {
    28|  1.31k|        Parser {
@@ -2467,33 +2467,33 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser5parse:
    81|  1.31k|    pub fn parse(&'_ mut self) -> TranslationUnit<'_> {
    82|  1.31k|        let mut translation_unit = TranslationUnit::new();
    83|       |
-   84|  22.5k|        while !self.is_finished() {
-   85|  21.2k|            if let Some(function_definition) = self.parse_function_definition() {
-   86|  1.57k|                translation_unit.function.push(function_definition);
-   87|  19.6k|            }
+   84|  22.4k|        while !self.is_finished() {
+   85|  21.1k|            if let Some(function_definition) = self.parse_function_definition() {
+   86|  1.70k|                translation_unit.function.push(function_definition);
+   87|  19.4k|            }
    88|       |        }
    89|       |
    90|  1.31k|        translation_unit
    91|  1.31k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser6expect:
-   70|   184k|    fn expect(&self, token_kind: &TokenKind) -> Option<&Token<'a>> {
-   71|   184k|        if let Some(token) = self.peek_next()
+   70|   185k|    fn expect(&self, token_kind: &TokenKind) -> Option<&Token<'a>> {
+   71|   185k|        if let Some(token) = self.peek_next()
    72|   180k|            && token.kind == *token_kind
    73|       |        {
-   74|  58.1k|            self.consume();
-   75|  58.1k|            return Some(token);
+   74|  58.5k|            self.consume();
+   75|  58.5k|            return Some(token);
    76|   126k|        }
    77|       |
    78|   126k|        None
-   79|   184k|    }
+   79|   185k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser7consume:
-   60|   104k|    fn consume(&self) {
-   61|   104k|        *self.index.borrow_mut() += 1;
-   62|   104k|    }
+   60|   105k|    fn consume(&self) {
+   61|   105k|        *self.index.borrow_mut() += 1;
+   62|   105k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser9peek_next:
-   56|   457k|    fn peek_next(&self) -> Option<&Token<'a>> {
-   57|   457k|        self.tokens.get(*self.index.borrow())
-   58|   457k|    }
+   56|   458k|    fn peek_next(&self) -> Option<&Token<'a>> {
+   57|   458k|        self.tokens.get(*self.index.borrow())
+   58|   458k|    }
 _RINvMCs883XhAbT7Nq_13rustcc_parserNtB3_6Parser10diagnosticReNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB3_:
    35|   144k|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
    36|   144k|        &'a self,
@@ -2506,16 +2506,16 @@ _RINvMCs883XhAbT7Nq_13rustcc_parserNtB3_6Parser10diagnosticReNtNtCsgxSeqfT5AE1_1
    43|   144k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
    44|   144k|    }
 _RINvMCs883XhAbT7Nq_13rustcc_parserNtB3_6Parser10diagnosticReNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB3_:
-   35|    435|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
-   36|    435|        &'a self,
-   37|    435|        id: DiagnosticId,
-   38|    435|        source_range: R,
-   39|    435|        message: S,
-   40|    435|    ) -> DiagnosticBuilder<'a> {
-   41|    435|        let diagnostic = Diagnostic::new(id, source_range, message);
+   35|    436|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
+   36|    436|        &'a self,
+   37|    436|        id: DiagnosticId,
+   38|    436|        source_range: R,
+   39|    436|        message: S,
+   40|    436|    ) -> DiagnosticBuilder<'a> {
+   41|    436|        let diagnostic = Diagnostic::new(id, source_range, message);
    42|       |
-   43|    435|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
-   44|    435|    }
+   43|    436|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
+   44|    436|    }
 
 _RINvMNtCsgxSeqfT5AE1_13rustcc_source11source_fileNtB3_10SourceFile3newReB16_ECs8IHyuhOPnlA_12fuzz_compile:
    21|  1.31k|    pub fn new<P: Into<String>, C: Into<String>>(path: P, content: C) -> Self {
@@ -2614,80 +2614,80 @@ _RNvMs0_NtCsgxSeqfT5AE1_13rustcc_source14source_managerNtB5_20VirtualSourceManag
    81|  1.31k|    }
 
 _RNvMNtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB2_11SourceRange11source_text:
-  234|  28.0k|    pub fn source_text(&self) -> Option<&'a str> {
-  235|  28.0k|        let source_file = self.begin.source_file?;
+  234|  27.9k|    pub fn source_text(&self) -> Option<&'a str> {
+  235|  27.9k|        let source_file = self.begin.source_file?;
   236|       |
-  237|  28.0k|        if self.begin == self.end {
-  238|  20.7k|            let character = &source_file.content[self.begin.index..].chars().next()?;
-  239|  20.7k|            let end_index = self.begin.index + character.len_utf8();
+  237|  27.9k|        if self.begin == self.end {
+  238|  20.6k|            let character = &source_file.content[self.begin.index..].chars().next()?;
+  239|  20.6k|            let end_index = self.begin.index + character.len_utf8();
   240|       |
-  241|  20.7k|            return source_file.content.get(self.begin.index..end_index);
-  242|  7.36k|        }
+  241|  20.6k|            return source_file.content.get(self.begin.index..end_index);
+  242|  7.35k|        }
   243|       |
-  244|  7.36k|        source_file.content.get(self.begin.index..=self.end.index)
-  245|  28.0k|    }
+  244|  7.35k|        source_file.content.get(self.begin.index..=self.end.index)
+  245|  27.9k|    }
 _RNvMNtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB2_11SourceRange13from_location:
-  138|  86.5k|    pub const fn from_location(location: SourceLocation<'a>) -> Self {
-  139|  86.5k|        Self {
-  140|  86.5k|            begin: location,
-  141|  86.5k|            end: location,
-  142|  86.5k|        }
-  143|  86.5k|    }
+  138|  86.7k|    pub const fn from_location(location: SourceLocation<'a>) -> Self {
+  139|  86.7k|        Self {
+  140|  86.7k|            begin: location,
+  141|  86.7k|            end: location,
+  142|  86.7k|        }
+  143|  86.7k|    }
 _RNvMNtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB2_11SourceRange3new:
-   69|  25.5k|    pub fn new(begin: SourceLocation<'a>, end: SourceLocation<'a>) -> Self {
-   70|  25.5k|        assert!(
-   71|  25.5k|            begin.source_file == end.source_file,
+   69|  25.4k|    pub fn new(begin: SourceLocation<'a>, end: SourceLocation<'a>) -> Self {
+   70|  25.4k|        assert!(
+   71|  25.4k|            begin.source_file == end.source_file,
    72|      0|            "Begin and end must be in the same file.\nBegin: {begin}\nEnd:   {end}\nBegin index: \
    73|      0|             {}\nEnd index:   {}",
    74|       |            begin.index,
    75|       |            end.index,
    76|       |        );
-   77|  25.5k|        assert!(
-   78|  25.5k|            begin.line <= end.line,
+   77|  25.4k|        assert!(
+   78|  25.4k|            begin.line <= end.line,
    79|      0|            "Begin location must be before end location.\nBegin: {begin}\nEnd:   {end}\nBegin \
    80|      0|             index: {}\nEnd index:   {}",
    81|       |            begin.index,
    82|       |            end.index,
    83|       |        );
-   84|  25.5k|        assert!(
-   85|  25.5k|            begin.line != end.line || begin.column <= end.column,
+   84|  25.4k|        assert!(
+   85|  25.4k|            begin.line != end.line || begin.column <= end.column,
    86|      0|            "Begin location must be before end location.\nBegin: {begin}\nEnd:   {end}\nBegin \
    87|      0|             index: {}\nEnd index:   {}",
    88|       |            begin.index,
    89|       |            end.index,
    90|       |        );
-   91|  25.5k|        assert!(
-   92|  25.5k|            begin.index <= end.index,
+   91|  25.4k|        assert!(
+   92|  25.4k|            begin.index <= end.index,
    93|      0|            "Begin location must be before end location.\nBegin: {begin}\nEnd:   {end}\nBegin \
    94|      0|             index: {}\nEnd index:   {}",
    95|       |            begin.index,
    96|       |            end.index,
    97|       |        );
-   98|  25.5k|        assert!(
-   99|  25.5k|            begin.line != end.line || begin.column != end.column || begin.index == end.index,
+   98|  25.4k|        assert!(
+   99|  25.4k|            begin.line != end.line || begin.column != end.column || begin.index == end.index,
   100|      0|            "If begin and end are on the same line and are on the same column they must have the \
   101|      0|             same index.\nBegin: {begin}\nEnd:   {end}\nBegin index: {}\nEnd index:   {}",
   102|       |            begin.index,
   103|       |            end.index,
   104|       |        );
   105|       |
-  106|  25.5k|        Self { begin, end }
-  107|  25.5k|    }
+  106|  25.4k|        Self { begin, end }
+  107|  25.4k|    }
 _RNvMNtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB2_11SourceRange7invalid:
-  166|  4.97k|    pub const fn invalid() -> Self {
-  167|  4.97k|        Self {
-  168|  4.97k|            begin: SourceLocation::invalid(),
-  169|  4.97k|            end: SourceLocation::invalid(),
-  170|  4.97k|        }
-  171|  4.97k|    }
+  166|  4.96k|    pub const fn invalid() -> Self {
+  167|  4.96k|        Self {
+  168|  4.96k|            begin: SourceLocation::invalid(),
+  169|  4.96k|            end: SourceLocation::invalid(),
+  170|  4.96k|        }
+  171|  4.96k|    }
 _RNvXs0_NtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB5_11SourceRangeINtNtCs6SNw0SRvItZ_4core7convert4FromNtNtB7_15source_location14SourceLocationE4from:
-  255|  86.5k|    fn from(location: SourceLocation<'a>) -> Self {
-  256|  86.5k|        Self::from_location(location)
-  257|  86.5k|    }
+  255|  86.7k|    fn from(location: SourceLocation<'a>) -> Self {
+  256|  86.7k|        Self::from_location(location)
+  257|  86.7k|    }
 _RNvXs_NtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB4_11SourceRangeNtNtCs6SNw0SRvItZ_4core7default7Default7default:
-  249|  4.97k|    fn default() -> Self {
-  250|  4.97k|        Self::invalid()
-  251|  4.97k|    }
+  249|  4.96k|    fn default() -> Self {
+  250|  4.96k|        Self::invalid()
+  251|  4.96k|    }
 
 _RNCNvNvCs8IHyuhOPnlA_12fuzz_compile1__19___libfuzzer_sys_run0B5_:
    55|  1.31k|    CODEGEN.with(|slot| {
