@@ -105,14 +105,14 @@ _RNvMNtCsgRQV1LU64Ti_10rustcc_ast15binary_operatorNtB2_14BinaryOperator10precede
    33|       |        // Reference: https://en.cppreference.com/w/c/language/operator_precedence.html
    34|  20.6k|        match self {
    35|  3.47k|            Multiply | Divide | Remainder => 110,
-   36|  2.38k|            Add | Subtract => 100,
-   37|  1.63k|            BitwiseLeftShift | BitwiseRightShift => 90,
-   38|  4.40k|            LessThan | LessThanOrEqual | GreaterThan | GreaterThanOrEqual => 80,
+   36|  2.37k|            Add | Subtract => 100,
+   37|  1.62k|            BitwiseLeftShift | BitwiseRightShift => 90,
+   38|  4.39k|            LessThan | LessThanOrEqual | GreaterThan | GreaterThanOrEqual => 80,
    39|  2.07k|            Equals | NotEquals => 70,
    40|  1.00k|            BitwiseAnd => 60,
-   41|  1.04k|            BitwiseXor => 50,
+   41|  1.05k|            BitwiseXor => 50,
    42|  1.50k|            BitwiseOr => 40,
-   43|    869|            LogicalAnd => 30,
+   43|    871|            LogicalAnd => 30,
    44|    899|            LogicalOr => 20,
    45|  1.32k|            Assignment => 10,
    46|       |        }
@@ -639,19 +639,19 @@ _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCs
    98|  3.50k|        }
    99|  3.50k|    }
 _RINvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB3_10Diagnostic3newNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationReECsdXdbFklkXPq_12rustcc_lexer:
-   87|  2.57k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
-   88|  2.57k|        id: DiagnosticId,
-   89|  2.57k|        source_range: R,
-   90|  2.57k|        message: S,
-   91|  2.57k|    ) -> Self {
-   92|  2.57k|        Self {
-   93|  2.57k|            id,
-   94|  2.57k|            level: id.level(),
-   95|  2.57k|            source_range: source_range.into(),
-   96|  2.57k|            message: message.into(),
-   97|  2.57k|            notes: Vec::new(),
-   98|  2.57k|        }
-   99|  2.57k|    }
+   87|  2.56k|    pub fn new<R: Into<SourceRange<'a>>, S: Into<String>>(
+   88|  2.56k|        id: DiagnosticId,
+   89|  2.56k|        source_range: R,
+   90|  2.56k|        message: S,
+   91|  2.56k|    ) -> Self {
+   92|  2.56k|        Self {
+   93|  2.56k|            id,
+   94|  2.56k|            level: id.level(),
+   95|  2.56k|            source_range: source_range.into(),
+   96|  2.56k|            message: message.into(),
+   97|  2.56k|            notes: Vec::new(),
+   98|  2.56k|        }
+   99|  2.56k|    }
 _RNvMNtCsbetgO7X7nK5_17rustcc_diagnostic10diagnosticNtB2_10Diagnostic10is_warning:
   107|   148k|    pub const fn is_warning(&self) -> bool {
   108|   148k|        matches!(self.level, DiagnosticLevel::Warning)
@@ -769,11 +769,11 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   148|  12.9k|                    self.state = LexerState::IntegerLiteral;
   149|  12.9k|                }
   150|       |
-  151|  1.16k|                Some('/') => {
-  152|  1.16k|                    self.token_begin_location = self.current_location();
-  153|  1.16k|                    self.consume_character();
-  154|  1.16k|                    self.state = LexerState::AfterSlash;
-  155|  1.16k|                }
+  151|  1.17k|                Some('/') => {
+  152|  1.17k|                    self.token_begin_location = self.current_location();
+  153|  1.17k|                    self.consume_character();
+  154|  1.17k|                    self.state = LexerState::AfterSlash;
+  155|  1.17k|                }
   156|       |
   157|       |                // Symbols
   158|  52.8k|                Some('(') => {
@@ -855,19 +855,19 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   234|  1.55k|                    self.state = LexerState::AfterPipe;
   235|  1.55k|                    self.consume_character();
   236|  1.55k|                }
-  237|    826|                Some('^') => {
-  238|    826|                    let location = self.current_location();
-  239|    826|
-  240|    826|                    self.queued_tokens.push_back(Token::new_caret(location));
-  241|    826|                    self.consume_character();
-  242|    826|                }
-  243|  2.36k|                Some('<') => {
-  244|  2.36k|                    let location = self.current_location();
-  245|  2.36k|                    self.token_begin_location = location;
-  246|  2.36k|
-  247|  2.36k|                    self.state = LexerState::AfterLessThan;
-  248|  2.36k|                    self.consume_character();
-  249|  2.36k|                }
+  237|    827|                Some('^') => {
+  238|    827|                    let location = self.current_location();
+  239|    827|
+  240|    827|                    self.queued_tokens.push_back(Token::new_caret(location));
+  241|    827|                    self.consume_character();
+  242|    827|                }
+  243|  2.35k|                Some('<') => {
+  244|  2.35k|                    let location = self.current_location();
+  245|  2.35k|                    self.token_begin_location = location;
+  246|  2.35k|
+  247|  2.35k|                    self.state = LexerState::AfterLessThan;
+  248|  2.35k|                    self.consume_character();
+  249|  2.35k|                }
   250|  2.45k|                Some('>') => {
   251|  2.45k|                    let location = self.current_location();
   252|  2.45k|                    self.token_begin_location = location;
@@ -914,9 +914,9 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   293|       |            LexerState::Identifier => loop {
   294|  29.9k|                match self.peek_next() {
   295|  29.7k|                    Some(character) if character.is_ascii_alphanumeric() || character == '_' => {
-  296|  23.4k|                        self.token_end_location = self.current_location();
-  297|  23.4k|                        self.consume_character();
-  298|  23.4k|                    }
+  296|  23.3k|                        self.token_end_location = self.current_location();
+  297|  23.3k|                        self.consume_character();
+  298|  23.3k|                    }
   299|       |                    _ => {
   300|       |                        // Emit identifier token
   301|  6.53k|                        let token = Token::new_identifier(SourceRange::new(
@@ -934,7 +934,7 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   313|       |            LexerState::IntegerLiteral => {
   314|  12.9k|                let mut value: u32 = 0;
   315|       |                loop {
-  316|  29.5k|                    match self.peek_next() {
+  316|  29.4k|                    match self.peek_next() {
   317|  29.3k|                        Some(character) if character.is_ascii_digit() => {
   318|       |                            // Multiply the current value by 10 and check for
   319|       |                            // any overflow
@@ -1018,12 +1018,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   397|    236|                        self.state = LexerState::MultiLineComment;
   398|    236|                    }
   399|       |
-  400|    701|                    Some(_) => {
-  401|    701|                        self.queued_tokens
-  402|    701|                            .push_back(Token::new_slash(self.token_begin_location));
-  403|    701|
-  404|    701|                        self.state = LexerState::Start;
-  405|    701|                    }
+  400|    704|                    Some(_) => {
+  401|    704|                        self.queued_tokens
+  402|    704|                            .push_back(Token::new_slash(self.token_begin_location));
+  403|    704|
+  404|    704|                        self.state = LexerState::Start;
+  405|    704|                    }
   406|       |
   407|      0|                    None => {
   408|      0|                        self.queued_tokens
@@ -1100,7 +1100,7 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   479|       |                }
   480|       |            }
   481|       |
-  482|  1.77k|            LexerState::AfterMinus => match self.peek_next() {
+  482|  1.76k|            LexerState::AfterMinus => match self.peek_next() {
   483|    228|                Some('-') => {
   484|    228|                    let location =
   485|    228|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1145,7 +1145,7 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   524|  2.01k|                }
   525|       |            },
   526|       |
-  527|  2.35k|            LexerState::AfterLessThan => match self.peek_next() {
+  527|  2.34k|            LexerState::AfterLessThan => match self.peek_next() {
   528|    459|                Some('=') => {
   529|    459|                    let location =
   530|    459|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1156,26 +1156,26 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   535|    459|
   536|    459|                    self.state = LexerState::Start;
   537|    459|                }
-  538|    612|                Some('<') => {
-  539|    612|                    let location =
-  540|    612|                        SourceRange::new(self.token_begin_location, self.current_location());
-  541|    612|
-  542|    612|                    self.consume_character();
-  543|    612|                    self.queued_tokens
-  544|    612|                        .push_back(Token::new_less_than_less_than(location));
-  545|    612|
-  546|    612|                    self.state = LexerState::Start;
-  547|    612|                }
+  538|    609|                Some('<') => {
+  539|    609|                    let location =
+  540|    609|                        SourceRange::new(self.token_begin_location, self.current_location());
+  541|    609|
+  542|    609|                    self.consume_character();
+  543|    609|                    self.queued_tokens
+  544|    609|                        .push_back(Token::new_less_than_less_than(location));
+  545|    609|
+  546|    609|                    self.state = LexerState::Start;
+  547|    609|                }
   548|       |
-  549|  1.28k|                _ => {
-  550|  1.28k|                    self.queued_tokens
-  551|  1.28k|                        .push_back(Token::new_less_than(self.token_begin_location));
-  552|  1.28k|
-  553|  1.28k|                    self.state = LexerState::Start;
-  554|  1.28k|                }
+  549|  1.27k|                _ => {
+  550|  1.27k|                    self.queued_tokens
+  551|  1.27k|                        .push_back(Token::new_less_than(self.token_begin_location));
+  552|  1.27k|
+  553|  1.27k|                    self.state = LexerState::Start;
+  554|  1.27k|                }
   555|       |            },
   556|       |
-  557|  2.45k|            LexerState::AfterGreaterThan => match self.peek_next() {
+  557|  2.44k|            LexerState::AfterGreaterThan => match self.peek_next() {
   558|    442|                Some('=') => {
   559|    442|                    let location =
   560|    442|                        SourceRange::new(self.token_begin_location, self.current_location());
@@ -1206,23 +1206,23 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   585|       |            },
   586|       |
   587|  1.45k|            LexerState::AfterAmpersand => match self.peek_next() {
-  588|    603|                Some('&') => {
-  589|    603|                    let location =
-  590|    603|                        SourceRange::new(self.token_begin_location, self.current_location());
-  591|    603|
-  592|    603|                    self.consume_character();
-  593|    603|                    self.queued_tokens
-  594|    603|                        .push_back(Token::new_ampersand_ampersand(location));
-  595|    603|
-  596|    603|                    self.state = LexerState::Start;
-  597|    603|                }
+  588|    604|                Some('&') => {
+  589|    604|                    let location =
+  590|    604|                        SourceRange::new(self.token_begin_location, self.current_location());
+  591|    604|
+  592|    604|                    self.consume_character();
+  593|    604|                    self.queued_tokens
+  594|    604|                        .push_back(Token::new_ampersand_ampersand(location));
+  595|    604|
+  596|    604|                    self.state = LexerState::Start;
+  597|    604|                }
   598|       |
-  599|    848|                _ => {
-  600|    848|                    self.queued_tokens
-  601|    848|                        .push_back(Token::new_ampersand(self.token_begin_location));
-  602|    848|
-  603|    848|                    self.state = LexerState::Start;
-  604|    848|                }
+  599|    850|                _ => {
+  600|    850|                    self.queued_tokens
+  601|    850|                        .push_back(Token::new_ampersand(self.token_begin_location));
+  602|    850|
+  603|    850|                    self.state = LexerState::Start;
+  604|    850|                }
   605|       |            },
   606|       |
   607|  1.54k|            LexerState::AfterPipe => match self.peek_next() {
@@ -1244,17 +1244,17 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   623|    984|                }
   624|       |            },
   625|       |
-  626|  8.37k|            LexerState::AfterBang => match self.peek_next() {
-  627|    522|                Some('=') => {
-  628|    522|                    let location =
-  629|    522|                        SourceRange::new(self.token_begin_location, self.current_location());
-  630|    522|
-  631|    522|                    self.consume_character();
-  632|    522|                    self.queued_tokens
-  633|    522|                        .push_back(Token::new_bang_equals(location));
-  634|    522|
-  635|    522|                    self.state = LexerState::Start;
-  636|    522|                }
+  626|  8.38k|            LexerState::AfterBang => match self.peek_next() {
+  627|    524|                Some('=') => {
+  628|    524|                    let location =
+  629|    524|                        SourceRange::new(self.token_begin_location, self.current_location());
+  630|    524|
+  631|    524|                    self.consume_character();
+  632|    524|                    self.queued_tokens
+  633|    524|                        .push_back(Token::new_bang_equals(location));
+  634|    524|
+  635|    524|                    self.state = LexerState::Start;
+  636|    524|                }
   637|       |
   638|  7.85k|                _ => {
   639|  7.85k|                    self.queued_tokens
@@ -1377,7 +1377,7 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind14unary_operator:
   136|       |        #[expect(clippy::wildcard_enum_match_arm)]
   137|  7.62k|        match self {
   138|    383|            Self::Plus => Some(UnaryOperator::Positive),
-  139|    320|            Self::Minus => Some(UnaryOperator::Negate),
+  139|    321|            Self::Minus => Some(UnaryOperator::Negate),
   140|    757|            Self::Tilde => Some(UnaryOperator::Complement),
   141|  6.16k|            Self::Bang => Some(UnaryOperator::LogicalNot),
   142|       |
@@ -1389,21 +1389,21 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15binary_operator:
   108|       |        #[expect(clippy::wildcard_enum_match_arm)]
   109|  17.8k|        match self {
   110|    717|            Self::Plus => Some(BinaryOperator::Add),
-  111|    718|            Self::Minus => Some(BinaryOperator::Subtract),
-  112|    754|            Self::Star => Some(BinaryOperator::Multiply),
-  113|    625|            Self::Slash => Some(BinaryOperator::Divide),
-  114|    800|            Self::Percent => Some(BinaryOperator::Remainder),
-  115|    636|            Self::Ampersand => Some(BinaryOperator::BitwiseAnd),
-  116|    578|            Self::AmpersandAmpersand => Some(BinaryOperator::LogicalAnd),
-  117|    698|            Self::Caret => Some(BinaryOperator::BitwiseXor),
+  111|    716|            Self::Minus => Some(BinaryOperator::Subtract),
+  112|    758|            Self::Star => Some(BinaryOperator::Multiply),
+  113|    628|            Self::Slash => Some(BinaryOperator::Divide),
+  114|    795|            Self::Percent => Some(BinaryOperator::Remainder),
+  115|    638|            Self::Ampersand => Some(BinaryOperator::BitwiseAnd),
+  116|    579|            Self::AmpersandAmpersand => Some(BinaryOperator::LogicalAnd),
+  117|    700|            Self::Caret => Some(BinaryOperator::BitwiseXor),
   118|    974|            Self::Pipe => Some(BinaryOperator::BitwiseOr),
   119|    630|            Self::PipePipe => Some(BinaryOperator::LogicalOr),
-  120|    790|            Self::Equals => Some(BinaryOperator::Assignment),
+  120|    791|            Self::Equals => Some(BinaryOperator::Assignment),
   121|    806|            Self::EqualsEquals => Some(BinaryOperator::Equals),
-  122|    563|            Self::BangEquals => Some(BinaryOperator::NotEquals),
-  123|    763|            Self::LessThan => Some(BinaryOperator::LessThan),
+  122|    564|            Self::BangEquals => Some(BinaryOperator::NotEquals),
+  123|    758|            Self::LessThan => Some(BinaryOperator::LessThan),
   124|    559|            Self::LessThanEqual => Some(BinaryOperator::LessThanOrEqual),
-  125|    579|            Self::LessThanLessThan => Some(BinaryOperator::BitwiseLeftShift),
+  125|    573|            Self::LessThanLessThan => Some(BinaryOperator::BitwiseLeftShift),
   126|  1.04k|            Self::GreaterThan => Some(BinaryOperator::GreaterThan),
   127|    467|            Self::GreaterThanEqual => Some(BinaryOperator::GreaterThanOrEqual),
   128|    499|            Self::GreaterThanGreaterThan => Some(BinaryOperator::BitwiseRightShift),
@@ -1415,8 +1415,8 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind15from_identifier:
    53|  6.53k|    pub fn from_identifier(identifier: &str) -> Self {
    54|  6.53k|        match identifier {
    55|  6.53k|            "int" => Self::KeywordInt,
-   56|  6.34k|            "return" => Self::KeywordReturn,
-   57|  3.64k|            "void" => Self::KeywordVoid,
+   56|  6.33k|            "return" => Self::KeywordReturn,
+   57|  3.63k|            "void" => Self::KeywordVoid,
    58|  3.44k|            _ => Self::Identifier(identifier.to_owned()),
    59|       |        }
    60|  6.53k|    }
@@ -1459,27 +1459,27 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token11new_percentNtNtCsgxSeqf
   334|  1.06k|        }
   335|  1.06k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_ampersandNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  338|    848|    pub fn new_ampersand<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  339|    848|        let range = range.into();
+  338|    850|    pub fn new_ampersand<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  339|    850|        let range = range.into();
   340|       |
-  341|    848|        debug_assert_eq!(range.source_text().unwrap_or(""), "&", "Expected '&'");
+  341|    850|        debug_assert_eq!(range.source_text().unwrap_or(""), "&", "Expected '&'");
   342|       |
-  343|    848|        Self {
-  344|    848|            kind: TokenKind::Ampersand,
-  345|    848|            range,
-  346|    848|        }
-  347|    848|    }
+  343|    850|        Self {
+  344|    850|            kind: TokenKind::Ampersand,
+  345|    850|            range,
+  346|    850|        }
+  347|    850|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_less_thanNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  445|  1.28k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  446|  1.28k|        let range = range.into();
+  445|  1.27k|    pub fn new_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  446|  1.27k|        let range = range.into();
   447|       |
-  448|  1.28k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
+  448|  1.27k|        debug_assert_eq!(range.source_text().unwrap_or(""), "<", "Expected '<'");
   449|       |
-  450|  1.28k|        Self {
-  451|  1.28k|            kind: TokenKind::LessThan,
-  452|  1.28k|            range,
-  453|  1.28k|        }
-  454|  1.28k|    }
+  450|  1.27k|        Self {
+  451|  1.27k|            kind: TokenKind::LessThan,
+  452|  1.27k|            range,
+  453|  1.27k|        }
+  454|  1.27k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token13new_pipe_pipeNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   386|    561|    pub fn new_pipe_pipe<R: Into<SourceRange<'a>>>(range: R) -> Self {
   387|    561|        let range = range.into();
@@ -1537,16 +1537,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token14new_left_braceNtNtCsgxS
   214|    908|        }
   215|    908|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token15new_bang_equalsNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
-  434|    522|    pub fn new_bang_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  435|    522|        let range = range.into();
+  434|    524|    pub fn new_bang_equals<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  435|    524|        let range = range.into();
   436|       |
-  437|    522|        debug_assert_eq!(range.source_text().unwrap_or(""), "!=", "Expected '!='");
+  437|    524|        debug_assert_eq!(range.source_text().unwrap_or(""), "!=", "Expected '!='");
   438|       |
-  439|    522|        Self {
-  440|    522|            kind: TokenKind::BangEquals,
-  441|    522|            range,
-  442|    522|        }
-  443|    522|    }
+  439|    524|        Self {
+  440|    524|            kind: TokenKind::BangEquals,
+  441|    524|            range,
+  442|    524|        }
+  443|    524|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token15new_minus_minusNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   278|    228|    pub fn new_minus_minus<R: Into<SourceRange<'a>>>(range: R) -> Self {
   279|    228|        let range = range.into();
@@ -1643,27 +1643,27 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token22new_greater_than_equalN
   497|    442|        }
   498|    442|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token23new_ampersand_ampersandNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
-  350|    603|    pub fn new_ampersand_ampersand<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  351|    603|        let range = range.into();
+  350|    604|    pub fn new_ampersand_ampersand<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  351|    604|        let range = range.into();
   352|       |
-  353|    603|        debug_assert_eq!(range.source_text().unwrap_or(""), "&&", "Expected '&&'");
+  353|    604|        debug_assert_eq!(range.source_text().unwrap_or(""), "&&", "Expected '&&'");
   354|       |
-  355|    603|        Self {
-  356|    603|            kind: TokenKind::AmpersandAmpersand,
-  357|    603|            range,
-  358|    603|        }
-  359|    603|    }
+  355|    604|        Self {
+  356|    604|            kind: TokenKind::AmpersandAmpersand,
+  357|    604|            range,
+  358|    604|        }
+  359|    604|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token23new_less_than_less_thanNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
-  467|    612|    pub fn new_less_than_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  468|    612|        let range = range.into();
+  467|    609|    pub fn new_less_than_less_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  468|    609|        let range = range.into();
   469|       |
-  470|    612|        debug_assert_eq!(range.source_text().unwrap_or(""), "<<", "Expected '<<'");
+  470|    609|        debug_assert_eq!(range.source_text().unwrap_or(""), "<<", "Expected '<<'");
   471|       |
-  472|    612|        Self {
-  473|    612|            kind: TokenKind::LessThanLessThan,
-  474|    612|            range,
-  475|    612|        }
-  476|    612|    }
+  472|    609|        Self {
+  473|    609|            kind: TokenKind::LessThanLessThan,
+  474|    609|            range,
+  475|    609|        }
+  476|    609|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token29new_greater_than_greater_thanNtNtCsgxSeqfT5AE1_13rustcc_source12source_range11SourceRangeEB7_:
   500|    519|    pub fn new_greater_than_greater_than<R: Into<SourceRange<'a>>>(range: R) -> Self {
   501|    519|        let range = range.into();
@@ -1720,16 +1720,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token8new_starNtNtCsgxSeqfT5AE
   322|  1.04k|        }
   323|  1.04k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_caretNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  362|    826|    pub fn new_caret<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  363|    826|        let range = range.into();
+  362|    827|    pub fn new_caret<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  363|    827|        let range = range.into();
   364|       |
-  365|    826|        debug_assert_eq!(range.source_text().unwrap_or(""), "^", "Expected '^'");
+  365|    827|        debug_assert_eq!(range.source_text().unwrap_or(""), "^", "Expected '^'");
   366|       |
-  367|    826|        Self {
-  368|    826|            kind: TokenKind::Caret,
-  369|    826|            range,
-  370|    826|        }
-  371|    826|    }
+  367|    827|        Self {
+  368|    827|            kind: TokenKind::Caret,
+  369|    827|            range,
+  370|    827|        }
+  371|    827|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_minusNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   266|  1.54k|    pub fn new_minus<R: Into<SourceRange<'a>>>(range: R) -> Self {
   267|  1.54k|        let range = range.into();
@@ -1742,16 +1742,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_minusNtNtCsgxSeqfT5A
   274|  1.54k|        }
   275|  1.54k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_slashNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  242|    701|    pub fn new_slash<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  243|    701|        let range = range.into();
+  242|    704|    pub fn new_slash<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  243|    704|        let range = range.into();
   244|       |
-  245|    701|        debug_assert_eq!(range.source_text().unwrap_or(""), "/", "Expected '/'");
+  245|    704|        debug_assert_eq!(range.source_text().unwrap_or(""), "/", "Expected '/'");
   246|       |
-  247|    701|        Self {
-  248|    701|            kind: TokenKind::Slash,
-  249|    701|            range,
-  250|    701|        }
-  251|    701|    }
+  247|    704|        Self {
+  248|    704|            kind: TokenKind::Slash,
+  249|    704|            range,
+  250|    704|        }
+  251|    704|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_tildeNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   254|  1.10k|    pub fn new_tilde<R: Into<SourceRange<'a>>>(range: R) -> Self {
   255|  1.10k|        let range = range.into();
@@ -2211,12 +2211,12 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser12parse_factor:
   273|  50.8k|            TokenKind::LeftParenthesis => self.parse_parenthesis_expression(),
   274|       |
   275|       |            _ => {
-  276|    227|                self.diagnostic(
-  277|    227|                    DiagnosticId::ExpectedExpression,
-  278|    227|                    token.range,
+  276|    225|                self.diagnostic(
+  277|    225|                    DiagnosticId::ExpectedExpression,
+  278|    225|                    token.range,
   279|       |                    "expected expression",
   280|       |                );
-  281|    227|                None
+  281|    225|                None
   282|       |            }
   283|       |        }
   284|  68.5k|    }
@@ -2232,25 +2232,25 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser16parse_expression:
   229|       |
   230|  18.9k|        while let Some(token) = self.peek_next() {
   231|  17.8k|            if let Some(operator) = token.binary_operator()
-  232|  13.2k|                && operator.precedence() >= minimum_precedence
+  232|  13.1k|                && operator.precedence() >= minimum_precedence
   233|       |            {
   234|  7.40k|                self.consume();
   235|       |
   236|  7.40k|                let right = self.parse_expression(operator.precedence() + 1)?;
   237|       |
-  238|  6.55k|                let range = SourceRange {
-  239|  6.55k|                    begin: left.range.begin,
-  240|  6.55k|                    end: right.range.end,
-  241|  6.55k|                };
+  238|  6.54k|                let range = SourceRange {
+  239|  6.54k|                    begin: left.range.begin,
+  240|  6.54k|                    end: right.range.end,
+  241|  6.54k|                };
   242|       |
-  243|  6.55k|                left = Expression {
-  244|  6.55k|                    kind: ExpressionKind::BinaryOperation {
-  245|  6.55k|                        operator,
-  246|  6.55k|                        left: Box::new(left),
-  247|  6.55k|                        right: Box::new(right),
-  248|  6.55k|                    },
-  249|  6.55k|                    range,
-  250|  6.55k|                };
+  243|  6.54k|                left = Expression {
+  244|  6.54k|                    kind: ExpressionKind::BinaryOperation {
+  245|  6.54k|                        operator,
+  246|  6.54k|                        left: Box::new(left),
+  247|  6.54k|                        right: Box::new(right),
+  248|  6.54k|                    },
+  249|  6.54k|                    range,
+  250|  6.54k|                };
   251|       |            } else {
   252|  10.4k|                break;
   253|       |            }
@@ -2289,13 +2289,13 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser22parse_return_statement:
   194|       |        };
   195|       |
   196|       |        // Parse the expression
-  197|  2.70k|        let Some(expression) = self.parse_expression(0) else {
-  198|    423|            self.diagnostic(
-  199|    423|                DiagnosticId::ExpectedExpression,
-  200|    423|                return_token.range.end,
+  197|  2.69k|        let Some(expression) = self.parse_expression(0) else {
+  198|    421|            self.diagnostic(
+  199|    421|                DiagnosticId::ExpectedExpression,
+  200|    421|                return_token.range.end,
   201|       |                "expected expression instead reached end of file",
   202|       |            );
-  203|    423|            return None;
+  203|    421|            return None;
   204|       |        };
   205|       |
   206|       |        // Require a semicolon
@@ -2478,7 +2478,7 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser5parse:
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser6expect:
    70|   182k|    fn expect(&self, token_kind: &TokenKind) -> Option<&Token<'a>> {
    71|   182k|        if let Some(token) = self.peek_next()
-   72|   178k|            && token.kind == *token_kind
+   72|   177k|            && token.kind == *token_kind
    73|       |        {
    74|  57.7k|            self.consume();
    75|  57.7k|            return Some(token);
@@ -2506,16 +2506,16 @@ _RINvMCs883XhAbT7Nq_13rustcc_parserNtB3_6Parser10diagnosticReNtNtCsgxSeqfT5AE1_1
    43|   142k|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
    44|   142k|    }
 _RINvMCs883XhAbT7Nq_13rustcc_parserNtB3_6Parser10diagnosticReNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB3_:
-   35|    423|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
-   36|    423|        &'a self,
-   37|    423|        id: DiagnosticId,
-   38|    423|        source_range: R,
-   39|    423|        message: S,
-   40|    423|    ) -> DiagnosticBuilder<'a> {
-   41|    423|        let diagnostic = Diagnostic::new(id, source_range, message);
+   35|    421|    fn diagnostic<S: Into<String>, R: Into<SourceRange<'a>>>(
+   36|    421|        &'a self,
+   37|    421|        id: DiagnosticId,
+   38|    421|        source_range: R,
+   39|    421|        message: S,
+   40|    421|    ) -> DiagnosticBuilder<'a> {
+   41|    421|        let diagnostic = Diagnostic::new(id, source_range, message);
    42|       |
-   43|    423|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
-   44|    423|    }
+   43|    421|        DiagnosticBuilder::new(self.diagnostic_engine.clone(), diagnostic)
+   44|    421|    }
 
 _RINvMNtCsgxSeqfT5AE1_13rustcc_source11source_fileNtB3_10SourceFile3newReB16_ECs8IHyuhOPnlA_12fuzz_compile:
    21|  1.31k|    pub fn new<P: Into<String>, C: Into<String>>(path: P, content: C) -> Self {
