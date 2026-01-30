@@ -1018,12 +1018,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   397|    236|                        self.state = LexerState::MultiLineComment;
   398|    236|                    }
   399|       |
-  400|    705|                    Some(_) => {
-  401|    705|                        self.queued_tokens
-  402|    705|                            .push_back(Token::new_slash(self.token_begin_location));
-  403|    705|
-  404|    705|                        self.state = LexerState::Start;
-  405|    705|                    }
+  400|    704|                    Some(_) => {
+  401|    704|                        self.queued_tokens
+  402|    704|                            .push_back(Token::new_slash(self.token_begin_location));
+  403|    704|
+  404|    704|                        self.state = LexerState::Start;
+  405|    704|                    }
   406|       |
   407|      0|                    None => {
   408|      0|                        self.queued_tokens
@@ -1742,16 +1742,16 @@ _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_minusNtNtCsgxSeqfT5A
   274|  1.53k|        }
   275|  1.53k|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_slashNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
-  242|    705|    pub fn new_slash<R: Into<SourceRange<'a>>>(range: R) -> Self {
-  243|    705|        let range = range.into();
+  242|    704|    pub fn new_slash<R: Into<SourceRange<'a>>>(range: R) -> Self {
+  243|    704|        let range = range.into();
   244|       |
-  245|    705|        debug_assert_eq!(range.source_text().unwrap_or(""), "/", "Expected '/'");
+  245|    704|        debug_assert_eq!(range.source_text().unwrap_or(""), "/", "Expected '/'");
   246|       |
-  247|    705|        Self {
-  248|    705|            kind: TokenKind::Slash,
-  249|    705|            range,
-  250|    705|        }
-  251|    705|    }
+  247|    704|        Self {
+  248|    704|            kind: TokenKind::Slash,
+  249|    704|            range,
+  250|    704|        }
+  251|    704|    }
 _RINvMs_NtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB5_5Token9new_tildeNtNtCsgxSeqfT5AE1_13rustcc_source15source_location14SourceLocationEB7_:
   254|  1.10k|    pub fn new_tilde<R: Into<SourceRange<'a>>>(range: R) -> Self {
   255|  1.10k|        let range = range.into();
@@ -2618,10 +2618,10 @@ _RNvMNtCsgxSeqfT5AE1_13rustcc_source12source_rangeNtB2_11SourceRange11source_tex
   235|  27.3k|        let source_file = self.begin.source_file?;
   236|       |
   237|  27.3k|        if self.begin == self.end {
-  238|  20.3k|            let character = &source_file.content[self.begin.index..].chars().next()?;
-  239|  20.3k|            let end_index = self.begin.index + character.len_utf8();
+  238|  20.2k|            let character = &source_file.content[self.begin.index..].chars().next()?;
+  239|  20.2k|            let end_index = self.begin.index + character.len_utf8();
   240|       |
-  241|  20.3k|            return source_file.content.get(self.begin.index..end_index);
+  241|  20.2k|            return source_file.content.get(self.begin.index..end_index);
   242|  7.06k|        }
   243|       |
   244|  7.06k|        source_file.content.get(self.begin.index..=self.end.index)
