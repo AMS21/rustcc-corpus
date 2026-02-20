@@ -823,12 +823,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   202|  1.76k|                    self.state = LexerState::AfterMinus;
   203|  1.76k|                    self.consume_character();
   204|  1.76k|                }
-  205|  2.29k|                Some('+') => {
-  206|  2.29k|                    self.token_begin_location = self.current_location();
-  207|  2.29k|
-  208|  2.29k|                    self.state = LexerState::AfterPlus;
-  209|  2.29k|                    self.consume_character();
-  210|  2.29k|                }
+  205|  2.28k|                Some('+') => {
+  206|  2.28k|                    self.token_begin_location = self.current_location();
+  207|  2.28k|
+  208|  2.28k|                    self.state = LexerState::AfterPlus;
+  209|  2.28k|                    self.consume_character();
+  210|  2.28k|                }
   211|  1.05k|                Some('*') => {
   212|  1.05k|                    let location = self.current_location();
   213|  1.05k|
@@ -1376,7 +1376,7 @@ _RNvMNtCsdXdbFklkXPq_12rustcc_lexer5tokenNtB2_9TokenKind14unary_operator:
   135|  7.60k|    pub const fn unary_operator(&self) -> Option<UnaryOperator> {
   136|       |        #[expect(clippy::wildcard_enum_match_arm)]
   137|  7.60k|        match self {
-  138|    383|            Self::Plus => Some(UnaryOperator::Positive),
+  138|    381|            Self::Plus => Some(UnaryOperator::Positive),
   139|    320|            Self::Minus => Some(UnaryOperator::Negate),
   140|    757|            Self::Tilde => Some(UnaryOperator::Complement),
   141|  6.14k|            Self::Bang => Some(UnaryOperator::LogicalNot),
