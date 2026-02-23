@@ -750,12 +750,12 @@ _RNvMCsdXdbFklkXPq_12rustcc_lexerNtB2_5Lexer21advance_state_machine:
   129|   157k|        match self.state {
   130|   111k|            LexerState::Start => match self.peek_next() {
   131|       |                // Whitespaces and newlines
-  132|    521|                Some('\n') => {
-  133|    521|                    self.consume_character();
-  134|    521|
-  135|    521|                    self.line += 1;
-  136|    521|                    self.column = 1;
-  137|    521|                }
+  132|    520|                Some('\n') => {
+  133|    520|                    self.consume_character();
+  134|    520|
+  135|    520|                    self.line += 1;
+  136|    520|                    self.column = 1;
+  137|    520|                }
   138|   110k|                Some(character) if character.is_whitespace() => {
   139|  1.10k|                    self.consume_character();
   140|  1.10k|                }
@@ -2323,18 +2323,18 @@ _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser22parse_unary_expression:
   307|  7.60k|        let operator = operator_token.unary_operator()?;
   308|       |
   309|  7.60k|        let expression = self.parse_factor()?;
-  310|  7.06k|        let range = SourceRange {
-  311|  7.06k|            begin: operator_token.range.begin,
-  312|  7.06k|            end: expression.range.end,
-  313|  7.06k|        };
+  310|  7.05k|        let range = SourceRange {
+  311|  7.05k|            begin: operator_token.range.begin,
+  312|  7.05k|            end: expression.range.end,
+  313|  7.05k|        };
   314|       |
-  315|  7.06k|        Some(Expression {
-  316|  7.06k|            kind: ExpressionKind::UnaryOperation {
-  317|  7.06k|                operator,
-  318|  7.06k|                expression: Box::new(expression),
-  319|  7.06k|            },
-  320|  7.06k|            range,
-  321|  7.06k|        })
+  315|  7.05k|        Some(Expression {
+  316|  7.05k|            kind: ExpressionKind::UnaryOperation {
+  317|  7.05k|                operator,
+  318|  7.05k|                expression: Box::new(expression),
+  319|  7.05k|            },
+  320|  7.05k|            range,
+  321|  7.05k|        })
   322|  7.60k|    }
 _RNvMCs883XhAbT7Nq_13rustcc_parserNtB2_6Parser25parse_function_definition:
    93|  20.8k|    fn parse_function_definition(&'_ self) -> Option<FunctionDefinition<'_>> {
