@@ -1,0 +1,26 @@
+LLVMFuzzerInitialize:
+  252|      2|            pub extern "C" fn LLVMFuzzerInitialize(_argc: *const isize, _argv: *const *const *const u8) -> isize {
+  253|      2|                $crate::initialize(_argc, _argv);
+  254|       |
+  255|       |                // Supplied init code
+  256|       |                $init;
+  257|      2|                0
+  258|      2|            }
+_RNvCs5QCd008k1dd_13libfuzzer_sys10initialize:
+   82|      2|pub fn initialize(_argc: *const isize, _argv: *const *const *const u8) -> isize {
+   83|       |    // Registers a panic hook that aborts the process before unwinding.
+   84|       |    // It is useful to abort before unwinding so that the fuzzer will then be
+   85|       |    // able to analyse the process stack frames to tell different bugs appart.
+   86|       |    //
+   87|       |    // HACK / FIXME: it would be better to use `-C panic=abort` but it's currently
+   88|       |    // impossible to build code using compiler plugins with this flag.
+   89|       |    // We will be able to remove this code when
+   90|       |    // https://github.com/rust-lang/cargo/issues/5423 is fixed.
+   91|      2|    let default_hook = std::panic::take_hook();
+   92|      2|    std::panic::set_hook(Box::new(move |panic_info| {
+   93|       |        default_hook(panic_info);
+   94|       |        std::process::abort();
+   95|       |    }));
+   96|      2|    0
+   97|      2|}
+
