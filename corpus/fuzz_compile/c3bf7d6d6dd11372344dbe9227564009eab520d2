@@ -1,0 +1,1 @@
+int continuemain(void) {int a = 3;}int retumain(void) {}	
