@@ -1,0 +1,1 @@
+	int mai(void) {return~2;}int ma(void) {return~6;}
