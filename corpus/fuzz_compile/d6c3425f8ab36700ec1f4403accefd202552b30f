@@ -1,1 +1,0 @@
-	int m(void) {return~42;}int a(void) {return~6;}
