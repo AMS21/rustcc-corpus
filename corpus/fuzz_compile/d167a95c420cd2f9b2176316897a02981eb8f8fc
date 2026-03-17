@@ -1,1 +1,0 @@
-int x(void) {int maPi;;maPi++&0&maPi++;}
