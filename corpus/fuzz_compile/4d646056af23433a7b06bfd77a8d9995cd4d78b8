@@ -1,1 +1,0 @@
-int n(void){int maPi;++maPi;}
