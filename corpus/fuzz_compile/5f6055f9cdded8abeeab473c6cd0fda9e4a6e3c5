@@ -1,1 +1,0 @@
-int mq(void){int maPi;++maPi;++maPi;++maPi;}
