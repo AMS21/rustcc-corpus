@@ -1,0 +1,1 @@
+int m(void){int maPi;maPi++;maPi++;maPi++;maPi++&maPi++;maPi++&maPi++&maPi++&0;}
